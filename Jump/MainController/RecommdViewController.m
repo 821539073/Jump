@@ -93,7 +93,7 @@
     self.scrollView.pagingEnabled = YES;
     self.scrollView.scrollEnabled = NO;
 
-    self.cardView = [[MainCardView alloc]initWithFrame:CGRectMake(self.scrollView.frame.size.width, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height)];
+    self.cardView = [[MainCardView alloc]initWithFrame:CGRectMake(0, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height)];
     [self.scrollView addSubview:self.cardView];
     [self.cardView drawVieWithType:MainCardViewType1];
     self.cardView.controller = self;
