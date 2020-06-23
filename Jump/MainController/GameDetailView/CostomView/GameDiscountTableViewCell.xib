@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="KGk-i7-Jjw" customClass="GameDiscountTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="历史价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73i-Wr-7GK">
+                        <rect key="frame" x="5" y="0.0" width="69.5" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="fiw-aB-scH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_opneTable.png" translatesAutoresizingMaskIntoConstraints="NO" id="DCS-Nt-7sK">
+                        <rect key="frame" x="305" y="17" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="9FN-M1-kVJ"/>
+                            <constraint firstAttribute="height" constant="10" id="LzX-ad-9ae"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Taj-Fo-xbC">
+                        <rect key="frame" x="5" y="44" width="310" height="149"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="展开" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJB-qN-Vqt">
+                        <rect key="frame" x="288.5" y="0.0" width="16.5" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="2le-sa-ZF2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="DCS-Nt-7sK" secondAttribute="trailing" constant="5" id="2oR-v9-wzG"/>
+                    <constraint firstItem="DCS-Nt-7sK" firstAttribute="centerY" secondItem="73i-Wr-7GK" secondAttribute="centerY" id="3GC-He-joI"/>
+                    <constraint firstItem="NJB-qN-Vqt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FKr-Jt-6Zk"/>
+                    <constraint firstAttribute="trailing" secondItem="Taj-Fo-xbC" secondAttribute="trailing" constant="5" id="Ygi-vD-xrY"/>
+                    <constraint firstItem="DCS-Nt-7sK" firstAttribute="leading" secondItem="NJB-qN-Vqt" secondAttribute="trailing" id="eW3-KZ-MbF"/>
+                    <constraint firstItem="73i-Wr-7GK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="k8T-94-ctc"/>
+                    <constraint firstItem="Taj-Fo-xbC" firstAttribute="top" secondItem="73i-Wr-7GK" secondAttribute="bottom" id="trr-dw-oFO"/>
+                    <constraint firstItem="73i-Wr-7GK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xWd-5X-DdV"/>
+                    <constraint firstItem="Taj-Fo-xbC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="yTT-8y-ohz"/>
+                    <constraint firstAttribute="bottom" secondItem="Taj-Fo-xbC" secondAttribute="bottom" id="zP3-8O-ZEV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bgview1" destination="Taj-Fo-xbC" id="XNf-Gw-Ykv"/>
+                <outlet property="openLabel" destination="DCS-Nt-7sK" id="T9h-1i-BkT"/>
+                <outlet property="openLable" destination="NJB-qN-Vqt" id="wBD-mp-V8n"/>
+            </connections>
+            <point key="canvasLocation" x="-355.07246376811599" y="136.27232142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_opneTable.png" width="32" height="32"/>
+    </resources>
+</document>

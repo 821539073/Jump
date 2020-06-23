@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+#source 'https://cdn.cocoapods.org'
+platform :ios, '10.0'
+inhibit_all_warnings!
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'Jump' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  
+  pod 'AFNetworking', '~> 4.0'
+  pod 'Masonry', '~> 1.1.0'
+  pod 'SDWebImage', '~> 5.8.0'
+  pod 'SDCycleScrollView', '~> 1.80'
+  pod 'HBDNavigationBar', '~> 1.7.7'
+  pod 'MJRefresh', '~> 3.4.3'
+  #pod 'AAChartKit', :git => 'https://github.com/AAChartModel/AAChartKit.git'
+  # Pods for AutoRun
+
+end

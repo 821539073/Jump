@@ -1,0 +1,45 @@
+//
+//  JumpPrefixHeader.pch
+//  Jump
+//
+//  Created by mac on 2020/6/12.
+//  Copyright © 2020 autorun. All rights reserved.
+//
+
+#ifndef JumpPrefixHeader_pch
+#define JumpPrefixHeader_pch
+
+
+
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
+#define makeTop(a,b) make.top.equalTo(a).with.offset(b)
+#define makeLeft(a,b) make.left.equalTo(a).with.offset(b)
+#define makeRight(a,b) make.right.equalTo(a).with.offset(b)
+#define makeBottom(a,b) make.bottom.equalTo(a).with.offset(b)
+
+#define makeHeight(a) make.height.mas_equalTo(a)
+#define makeWidth(a) make.width.mas_equalTo(a)
+
+#define makeEdges(a,b,c,d,e) make.edges.mas_equalTo(a).with.insets(UIEdgeInsetsMake(b, c, d, e));
+
+
+#define DeviceWidth [UIScreen mainScreen].bounds.size.width
+#define DeviceHeight [UIScreen mainScreen].bounds.size.height
+
+#define NaviTopBarHeight 64
+
+#define Network [[NetworkClass alloc]init]
+#define NSUserDefaultsCookie [[NSUserDefaults standardUserDefaults] objectForKey:@"cookie"]
+
+#define DefualtUrl
+
+#define ViewCornerRadius(a,b)         a.layer.cornerRadius = b;a.layer.cornerRadius = YES
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* JumpPrefixHeader_pch */
