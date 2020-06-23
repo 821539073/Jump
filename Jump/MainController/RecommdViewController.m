@@ -86,7 +86,7 @@
         makeHeight(44);
     }];
     [self.topScroller  numOfButtonWithArr:topHorizonButtonArr horizontalSlideButtonType:HorizontalSlideButtonType1];
-    
+    //
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height - 44 - 49 - 22)];
     [self.view addSubview:self.scrollView];
     self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 3, self.view.bounds.size.height);
