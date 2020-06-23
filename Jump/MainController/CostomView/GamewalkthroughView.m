@@ -46,7 +46,7 @@
     flowLayout.itemSize = CGSizeMake((DeviceWidth - 5)/4, (DeviceWidth - 5)/4);
     flowLayout.minimumLineSpacing = 1;
     flowLayout.minimumInteritemSpacing = 1;
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - 44) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:flowLayout];
     self.collectionView.backgroundColor = [UIColor redColor];
     [self addSubview:self.collectionView];
 
