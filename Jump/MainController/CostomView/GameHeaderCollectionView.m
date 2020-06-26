@@ -12,7 +12,7 @@
 
 -(void)setHeaderTitle:(NSString *)title{
     
-    self.backgroundColor = [UIColor greenColor];
+    //self.backgroundColor = [UIColor greenColor];
     UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, self.frame.size.width - 20, self.frame.size.height)];
     [self addSubview:lable];
     lable.text = title;

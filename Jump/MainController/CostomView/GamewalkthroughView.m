@@ -47,7 +47,7 @@
     flowLayout.minimumLineSpacing = 1;
     flowLayout.minimumInteritemSpacing = 1;
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) collectionViewLayout:flowLayout];
-    self.collectionView.backgroundColor = [UIColor redColor];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.collectionView];
 
     [self.collectionView registerNib:[UINib nibWithNibName:@"GamewalkthroughtCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"GamewalkthroughtCollectionViewCell"];
@@ -91,7 +91,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     GamewalkthroughtCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GamewalkthroughtCollectionViewCell" forIndexPath:indexPath];
     //[cell sizeToFit];
-    cell.backgroundColor = [UIColor brownColor];
+    cell.backgroundColor = [UIColor whiteColor];
     if(indexPath.section == 0){
         cell.nameLabel.text = self.toolsArr[indexPath.row];
     }else if(indexPath.section == 1){
