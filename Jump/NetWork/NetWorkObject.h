@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)TodayGameRecommendoffset:(NSString *)page Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
 +(void)getAllGonglveSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
 +(void)getNewPlayerListSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
++(void)getNormalArticleWithId:(NSString *)articleId Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
 @end
 
 NS_ASSUME_NONNULL_END

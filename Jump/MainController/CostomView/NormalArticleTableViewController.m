@@ -7,44 +7,110 @@
 //
 
 #import "NormalArticleTableViewController.h"
-
+#import "NetWorkObject.h"
+#import "NormalArticleModel.h"
+#import "YYModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "NormalArticleTableViewCell.h"
 @interface NormalArticleTableViewController ()
-
+@property(nonatomic,strong) NSArray *contentList;
+@property(nonatomic,strong) NSString *articleTitle;
+//@property(nonatomic,strong) NSMutableArray *cellHeightArr;
 @end
 
 @implementation NormalArticleTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    if (self.articleId != nil) {
+        
+        [self getNormalArticle];
+        
+    }
+   
 }
+
+-(void)getNormalArticle{
+    [NetWorkObject getNormalArticleWithId:self.articleId Success:^(id  _Nonnull success) {
+        NormalArticleModel *model = [NormalArticleModel yy_modelWithJSON:success];
+        self.contentList = [NSArray arrayWithArray:model.data.contentList];
+        self.articleTitle = model.data.name;
+        [self.tableView reloadData];
+    } failure:^(id  _Nonnull failure) {
+        
+    }];
+    
+}
+
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.contentList.count;
 }
-
-/*
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 44;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *view = [[UIView alloc]init];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(6, 0, DeviceWidth - 12, 44)];
+    [view addSubview:label];
+    label.text = self.articleTitle;
+    return view;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    Contentlist *list = self.contentList[indexPath.row];
+    if ([list.type isEqualToString:@"text"] ) {
+        return [self cellHeight:list.text];
+    }else if([list.type isEqualToString:@"image"]){
+        return (DeviceWidth - 12)*0.5625;
+    }
+    return 44;
+}
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat sectionHeaderHeight = 44;
+    if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >=0) {
+        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    }else if(scrollView.contentOffset.y >= sectionHeaderHeight){
+        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+    }
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    static NSString *cellId = @"cellID0";
+    NormalArticleTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (!cell) {
+        NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"NormalArticleTableViewCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        Contentlist *list = self.contentList[indexPath.row];
+        if ([list.type isEqualToString:@"text"]) {
+            //ce.hidden = YES;
+            cell.bgImageView.hidden = YES;
+            cell.textView.hidden = NO;
+            cell.textView.text = list.text;
+        }else if([list.type isEqualToString:@"image"]){
+            cell.textView.hidden = YES;
+            cell.bgImageView.hidden = NO;
+            [cell.bgImageView sd_setImageWithURL:[NSURL URLWithString:list.image]];
+
+            
+        }
+    }
     return cell;
 }
-*/
+
+-(float)cellHeight:(NSString *)test{
+    
+    UITextView *textView = [[UITextView alloc]init];
+    textView.font = [UIFont systemFontOfSize:14];
+    textView.text = test;
+    CGSize sizeToFit = [textView sizeThatFits:CGSizeMake(DeviceWidth - 12, MAXFLOAT)];
+    //NSLog(@"H:%f,W:%f,DeviceWidth:%f",sizeToFit.height,sizeToFit.width,DeviceWidth - 10);
+    return sizeToFit.height;
+
+}
 
 /*
 // Override to support conditional editing of the table view.

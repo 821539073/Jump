@@ -89,6 +89,7 @@
     return 4;
 }
 
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 3) {
         return CGSizeMake(DeviceWidth,120);
@@ -189,6 +190,7 @@
             //NSString *urlstr = []
         }else if([playlist.type isEqualToString:@"1"]){
             NormalArticleTableViewController *v1 = [[NormalArticleTableViewController alloc]init];
+            v1.articleId = playlist.urlPath;
             [self.controller.navigationController pushViewController:v1 animated:YES];
         }
       //

@@ -71,6 +71,9 @@
 		04C6FD4924A6E9A70033F5F0 /* NoviceGuideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */; };
 		04C6FD4D24A709D20033F5F0 /* NormalArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4B24A709D20033F5F0 /* NormalArticleTableViewController.m */; };
 		04C6FD4E24A709D20033F5F0 /* NormalArticleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD4C24A709D20033F5F0 /* NormalArticleTableViewController.xib */; };
+		04C6FD5124A720B50033F5F0 /* NormalArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4F24A720B50033F5F0 /* NormalArticleModel.m */; };
+		04C6FD5524A736710033F5F0 /* NormalArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD5324A736710033F5F0 /* NormalArticleTableViewCell.m */; };
+		04C6FD5624A736710033F5F0 /* NormalArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD5424A736710033F5F0 /* NormalArticleTableViewCell.xib */; };
 		1D3A8D2318A2F64718D91A30 /* Pods_Jump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +200,11 @@
 		04C6FD4A24A709D20033F5F0 /* NormalArticleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalArticleTableViewController.h; sourceTree = "<group>"; };
 		04C6FD4B24A709D20033F5F0 /* NormalArticleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalArticleTableViewController.m; sourceTree = "<group>"; };
 		04C6FD4C24A709D20033F5F0 /* NormalArticleTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalArticleTableViewController.xib; sourceTree = "<group>"; };
+		04C6FD4F24A720B50033F5F0 /* NormalArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalArticleModel.m; sourceTree = "<group>"; };
+		04C6FD5024A720B50033F5F0 /* NormalArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalArticleModel.h; sourceTree = "<group>"; };
+		04C6FD5224A736710033F5F0 /* NormalArticleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalArticleTableViewCell.h; sourceTree = "<group>"; };
+		04C6FD5324A736710033F5F0 /* NormalArticleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalArticleTableViewCell.m; sourceTree = "<group>"; };
+		04C6FD5424A736710033F5F0 /* NormalArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalArticleTableViewCell.xib; sourceTree = "<group>"; };
 		3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jump.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE295F98C98750EBC99772E /* Pods-Jump.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.release.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.release.xcconfig"; sourceTree = "<group>"; };
 		4718AF4DB04A69E40A713900 /* Pods-Jump.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.debug.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.debug.xcconfig"; sourceTree = "<group>"; };
@@ -406,6 +414,9 @@
 				04C6FD4A24A709D20033F5F0 /* NormalArticleTableViewController.h */,
 				04C6FD4B24A709D20033F5F0 /* NormalArticleTableViewController.m */,
 				04C6FD4C24A709D20033F5F0 /* NormalArticleTableViewController.xib */,
+				04C6FD5224A736710033F5F0 /* NormalArticleTableViewCell.h */,
+				04C6FD5324A736710033F5F0 /* NormalArticleTableViewCell.m */,
+				04C6FD5424A736710033F5F0 /* NormalArticleTableViewCell.xib */,
 				047FC8FE24A08C65002953EA /* GameHeaderCollectionView.m */,
 				041307F7249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.h */,
 				041307F8249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.m */,
@@ -444,6 +455,8 @@
 		04C6FD4324A6DDDD0033F5F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04C6FD5024A720B50033F5F0 /* NormalArticleModel.h */,
+				04C6FD4F24A720B50033F5F0 /* NormalArticleModel.m */,
 				04C6FD4724A6E9A70033F5F0 /* NoviceGuideModel.h */,
 				04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */,
 				041307F4249DF5AC005D8E53 /* TodayRecomModel.h */,
@@ -586,6 +599,7 @@
 				04541A4C2496FCA90013B497 /* icon_recomm.png in Resources */,
 				049BAA092499005500CDEB2A /* GameNameTableViewCell.xib in Resources */,
 				04541A5D2497900F0013B497 /* GameVideoTableViewCell.xib in Resources */,
+				04C6FD5624A736710033F5F0 /* NormalArticleTableViewCell.xib in Resources */,
 				048B439E24932BCA0021A2B6 /* Main.storyboard in Resources */,
 				048B43F02494B4480021A2B6 /* DigiCert Global Root CA.cer in Resources */,
 				04C6FD3F24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib in Resources */,
@@ -680,6 +694,7 @@
 				04541A72249850180013B497 /* GradeTableViewCell.m in Sources */,
 				04541A6D249849A20013B497 /* PriceHistoryTableViewCell.m in Sources */,
 				041307DB249B9349005D8E53 /* GameComment.m in Sources */,
+				04C6FD5524A736710033F5F0 /* NormalArticleTableViewCell.m in Sources */,
 				04C6FD3E24A629D70033F5F0 /* NoviceguideCollectionViewCell.m in Sources */,
 				041307FA249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.m in Sources */,
 				041307EE249DE702005D8E53 /* GamewalkthroughView.m in Sources */,
@@ -691,6 +706,7 @@
 				04541A682497B16A0013B497 /* LowPriceTableViewCell.m in Sources */,
 				048B439524932BCA0021A2B6 /* AppDelegate.m in Sources */,
 				04541A77249853D20013B497 /* GameIntroduceTableViewCell.m in Sources */,
+				04C6FD5124A720B50033F5F0 /* NormalArticleModel.m in Sources */,
 				041307EB249DE406005D8E53 /* TodayRecommendView.m in Sources */,
 				047FC8FF24A08C65002953EA /* GameHeaderCollectionView.m in Sources */,
 				048B439824932BCA0021A2B6 /* SceneDelegate.m in Sources */,

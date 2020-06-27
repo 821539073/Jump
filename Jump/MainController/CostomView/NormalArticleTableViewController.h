@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NormalArticleTableViewController : UITableViewController
 
+@property(nonatomic,strong)NSString *articleId;
 @end
 
 NS_ASSUME_NONNULL_END
