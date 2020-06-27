@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GamewalkthroughView : UIView
+@property(nonatomic,strong) UIViewController *controller;
 -(id)initWithFrame:(CGRect)frame;
 @end
 

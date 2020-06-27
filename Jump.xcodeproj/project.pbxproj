@@ -69,6 +69,8 @@
 		04C6FD3E24A629D70033F5F0 /* NoviceguideCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD3C24A629D70033F5F0 /* NoviceguideCollectionViewCell.m */; };
 		04C6FD3F24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */; };
 		04C6FD4924A6E9A70033F5F0 /* NoviceGuideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */; };
+		04C6FD4D24A709D20033F5F0 /* NormalArticleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4B24A709D20033F5F0 /* NormalArticleTableViewController.m */; };
+		04C6FD4E24A709D20033F5F0 /* NormalArticleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD4C24A709D20033F5F0 /* NormalArticleTableViewController.xib */; };
 		1D3A8D2318A2F64718D91A30 /* Pods_Jump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */; };
 /* End PBXBuildFile section */
 
@@ -192,6 +194,9 @@
 		04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoviceguideCollectionViewCell.xib; sourceTree = "<group>"; };
 		04C6FD4724A6E9A70033F5F0 /* NoviceGuideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoviceGuideModel.h; sourceTree = "<group>"; };
 		04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoviceGuideModel.m; sourceTree = "<group>"; };
+		04C6FD4A24A709D20033F5F0 /* NormalArticleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalArticleTableViewController.h; sourceTree = "<group>"; };
+		04C6FD4B24A709D20033F5F0 /* NormalArticleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalArticleTableViewController.m; sourceTree = "<group>"; };
+		04C6FD4C24A709D20033F5F0 /* NormalArticleTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalArticleTableViewController.xib; sourceTree = "<group>"; };
 		3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jump.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE295F98C98750EBC99772E /* Pods-Jump.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.release.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.release.xcconfig"; sourceTree = "<group>"; };
 		4718AF4DB04A69E40A713900 /* Pods-Jump.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.debug.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.debug.xcconfig"; sourceTree = "<group>"; };
@@ -398,6 +403,9 @@
 				041307EC249DE702005D8E53 /* GamewalkthroughView.h */,
 				041307ED249DE702005D8E53 /* GamewalkthroughView.m */,
 				047FC8FD24A08C65002953EA /* GameHeaderCollectionView.h */,
+				04C6FD4A24A709D20033F5F0 /* NormalArticleTableViewController.h */,
+				04C6FD4B24A709D20033F5F0 /* NormalArticleTableViewController.m */,
+				04C6FD4C24A709D20033F5F0 /* NormalArticleTableViewController.xib */,
 				047FC8FE24A08C65002953EA /* GameHeaderCollectionView.m */,
 				041307F7249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.h */,
 				041307F8249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.m */,
@@ -564,6 +572,7 @@
 				04541A692497B16A0013B497 /* LowPriceTableViewCell.xib in Resources */,
 				04541A4D2496FCA90013B497 /* icon_alert.png in Resources */,
 				048B43A624932BCB0021A2B6 /* LaunchScreen.storyboard in Resources */,
+				04C6FD4E24A709D20033F5F0 /* NormalArticleTableViewController.xib in Resources */,
 				04541A73249850180013B497 /* GradeTableViewCell.xib in Resources */,
 				041307E0249B96F2005D8E53 /* GameDiscountTableViewCell.xib in Resources */,
 				04541A53249742E50013B497 /* icon_back.png in Resources */,
@@ -659,6 +668,7 @@
 				049BAA082499005500CDEB2A /* GameNameTableViewCell.m in Sources */,
 				041307DF249B96F2005D8E53 /* GameDiscountTableViewCell.m in Sources */,
 				0444D131249A5DAB00BBC5B1 /* PriceView.m in Sources */,
+				04C6FD4D24A709D20033F5F0 /* NormalArticleTableViewController.m in Sources */,
 				048B439B24932BCA0021A2B6 /* ViewController.m in Sources */,
 				04C6FD4924A6E9A70033F5F0 /* NoviceGuideModel.m in Sources */,
 				048B43EB2493C8040021A2B6 /* CardTableViewCell.m in Sources */,

@@ -31,7 +31,10 @@
 
 
 + (NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
-    return @{@"ID":@"id"};
+    return @{@"ID":@"id",
+             @"urlPath":@"path",
+             
+    };
 }
 
 @end

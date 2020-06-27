@@ -102,6 +102,7 @@
     [self.scrollView addSubview:todayView];
     
     GamewalkthroughView *walkthroughView = [[GamewalkthroughView alloc]initWithFrame:CGRectMake(self.scrollView.frame.size.width * 2, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height)];
+    walkthroughView.controller = self;
     [self.scrollView addSubview:walkthroughView];
     
     

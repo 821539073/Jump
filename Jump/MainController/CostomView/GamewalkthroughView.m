@@ -16,6 +16,7 @@
 #import "GameHeaderCollectionView.h"
 #import "NoviceguideCollectionViewCell.h"
 #import "NoviceGuideModel.h"
+#import "NormalArticleTableViewController.h"
 @interface GamewalkthroughView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -75,6 +76,7 @@
     [NetWorkObject getNewPlayerListSuccess:^(id  _Nonnull success) {
         NoviceGuideModel *playList = [NoviceGuideModel yy_modelWithJSON:success];
         self.playlistArr = [NSArray arrayWithArray:playList.data.playerList];
+        [self.collectionView reloadData];
     } failure:^(id  _Nonnull failure) {
         
     }];
@@ -120,7 +122,7 @@
             cell.nameLabel.text = @"222" ;
         }else if(indexPath.section == 2){
             Allgonglvelist *model = self.gonglveArr[indexPath.row];
-            cell.nameLabel.text = model.title;
+            cell.nameLabel.text = model.titleZh;
             [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.icon]];
         }
 
@@ -178,6 +180,19 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%@",indexPath);
+    if(indexPath.section == 3){
+        NoviceGuideplayerlist *playlist = self.playlistArr[indexPath.row];
+        NSLog(@"%@",playlist.urlPath);
+        if ([playlist.type isEqualToString:@"12"]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:playlist.urlPath]];
+        }else if([playlist.type isEqualToString:@"5"]){
+            //NSString *urlstr = []
+        }else if([playlist.type isEqualToString:@"1"]){
+            NormalArticleTableViewController *v1 = [[NormalArticleTableViewController alloc]init];
+            [self.controller.navigationController pushViewController:v1 animated:YES];
+        }
+      //
+    }
     
 }
 

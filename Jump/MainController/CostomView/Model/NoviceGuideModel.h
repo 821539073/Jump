@@ -26,7 +26,7 @@
 
 @interface NoviceGuideplayerlist : NSObject
 
-@property (nonatomic, copy) NSString *path;
+@property (nonatomic, copy) NSString *urlPath;
 
 @property (nonatomic, assign) NSInteger ID;
 
