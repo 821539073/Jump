@@ -66,6 +66,9 @@
 		049BAA042498A3C200CDEB2A /* icon_videoplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 049BAA032498A3C200CDEB2A /* icon_videoplay.png */; };
 		049BAA082499005500CDEB2A /* GameNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049BAA062499005500CDEB2A /* GameNameTableViewCell.m */; };
 		049BAA092499005500CDEB2A /* GameNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049BAA072499005500CDEB2A /* GameNameTableViewCell.xib */; };
+		04C6FD3E24A629D70033F5F0 /* NoviceguideCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD3C24A629D70033F5F0 /* NoviceguideCollectionViewCell.m */; };
+		04C6FD3F24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */; };
+		04C6FD4924A6E9A70033F5F0 /* NoviceGuideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */; };
 		1D3A8D2318A2F64718D91A30 /* Pods_Jump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,8 +113,8 @@
 		041307F7249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamewalkthroughtCollectionViewCell.h; sourceTree = "<group>"; };
 		041307F8249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamewalkthroughtCollectionViewCell.m; sourceTree = "<group>"; };
 		041307F9249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamewalkthroughtCollectionViewCell.xib; sourceTree = "<group>"; };
-		041307FC249E3DAA005D8E53 /* GonglveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GonglveModel.h; path = ../GameDetailView/GameDetailModel/GonglveModel.h; sourceTree = "<group>"; };
-		041307FD249E3DAA005D8E53 /* GonglveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GonglveModel.m; path = ../GameDetailView/GameDetailModel/GonglveModel.m; sourceTree = "<group>"; };
+		041307FC249E3DAA005D8E53 /* GonglveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GonglveModel.h; sourceTree = "<group>"; };
+		041307FD249E3DAA005D8E53 /* GonglveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GonglveModel.m; sourceTree = "<group>"; };
 		0444D12D249A569600BBC5B1 /* icon_question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_question.png; sourceTree = "<group>"; };
 		0444D12F249A5DAB00BBC5B1 /* PriceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PriceView.h; sourceTree = "<group>"; };
 		0444D130249A5DAB00BBC5B1 /* PriceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PriceView.m; sourceTree = "<group>"; };
@@ -184,6 +187,11 @@
 		049BAA052499005500CDEB2A /* GameNameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameNameTableViewCell.h; sourceTree = "<group>"; };
 		049BAA062499005500CDEB2A /* GameNameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameNameTableViewCell.m; sourceTree = "<group>"; };
 		049BAA072499005500CDEB2A /* GameNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameNameTableViewCell.xib; sourceTree = "<group>"; };
+		04C6FD3B24A629D70033F5F0 /* NoviceguideCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoviceguideCollectionViewCell.h; sourceTree = "<group>"; };
+		04C6FD3C24A629D70033F5F0 /* NoviceguideCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoviceguideCollectionViewCell.m; sourceTree = "<group>"; };
+		04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoviceguideCollectionViewCell.xib; sourceTree = "<group>"; };
+		04C6FD4724A6E9A70033F5F0 /* NoviceGuideModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoviceGuideModel.h; sourceTree = "<group>"; };
+		04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoviceGuideModel.m; sourceTree = "<group>"; };
 		3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jump.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE295F98C98750EBC99772E /* Pods-Jump.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.release.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.release.xcconfig"; sourceTree = "<group>"; };
 		4718AF4DB04A69E40A713900 /* Pods-Jump.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.debug.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.debug.xcconfig"; sourceTree = "<group>"; };
@@ -377,14 +385,13 @@
 		048B43D024932DD40021A2B6 /* CostomView */ = {
 			isa = PBXGroup;
 			children = (
+				04C6FD4324A6DDDD0033F5F0 /* Model */,
 				048B43D124932E460021A2B6 /* horizontalSlideButtonView.h */,
 				048B43D224932E460021A2B6 /* horizontalSlideButtonView.m */,
 				048B43D4249373C50021A2B6 /* MainCardView.h */,
 				048B43D5249373C50021A2B6 /* MainCardView.m */,
 				041307E9249DE406005D8E53 /* TodayRecommendView.h */,
 				041307EA249DE406005D8E53 /* TodayRecommendView.m */,
-				041307F4249DF5AC005D8E53 /* TodayRecomModel.h */,
-				041307F5249DF5AC005D8E53 /* TodayRecomModel.m */,
 				041307EF249DEB7D005D8E53 /* TodayRecommendTableViewCell.h */,
 				041307F0249DEB7D005D8E53 /* TodayRecommendTableViewCell.m */,
 				041307F1249DEB7D005D8E53 /* TodayRecommendTableViewCell.xib */,
@@ -392,11 +399,12 @@
 				041307ED249DE702005D8E53 /* GamewalkthroughView.m */,
 				047FC8FD24A08C65002953EA /* GameHeaderCollectionView.h */,
 				047FC8FE24A08C65002953EA /* GameHeaderCollectionView.m */,
-				041307FC249E3DAA005D8E53 /* GonglveModel.h */,
-				041307FD249E3DAA005D8E53 /* GonglveModel.m */,
 				041307F7249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.h */,
 				041307F8249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.m */,
 				041307F9249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.xib */,
+				04C6FD3B24A629D70033F5F0 /* NoviceguideCollectionViewCell.h */,
+				04C6FD3C24A629D70033F5F0 /* NoviceguideCollectionViewCell.m */,
+				04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */,
 				048B43E82493C8040021A2B6 /* CardTableViewCell.h */,
 				048B43E92493C8040021A2B6 /* CardTableViewCell.m */,
 				048B43EA2493C8040021A2B6 /* CardTableViewCell.xib */,
@@ -423,6 +431,19 @@
 				04541A4724966EB20013B497 /* GameDataModel.m */,
 			);
 			path = NetWork;
+			sourceTree = "<group>";
+		};
+		04C6FD4324A6DDDD0033F5F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04C6FD4724A6E9A70033F5F0 /* NoviceGuideModel.h */,
+				04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */,
+				041307F4249DF5AC005D8E53 /* TodayRecomModel.h */,
+				041307F5249DF5AC005D8E53 /* TodayRecomModel.m */,
+				041307FC249E3DAA005D8E53 /* GonglveModel.h */,
+				041307FD249E3DAA005D8E53 /* GonglveModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C6FEE43F31BB0A54859069EA /* Frameworks */ = {
@@ -558,6 +579,7 @@
 				04541A5D2497900F0013B497 /* GameVideoTableViewCell.xib in Resources */,
 				048B439E24932BCA0021A2B6 /* Main.storyboard in Resources */,
 				048B43F02494B4480021A2B6 /* DigiCert Global Root CA.cer in Resources */,
+				04C6FD3F24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib in Resources */,
 				041307FB249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.xib in Resources */,
 				041307F3249DEB7D005D8E53 /* TodayRecommendTableViewCell.xib in Resources */,
 				049BAA042498A3C200CDEB2A /* icon_videoplay.png in Resources */,
@@ -638,6 +660,7 @@
 				041307DF249B96F2005D8E53 /* GameDiscountTableViewCell.m in Sources */,
 				0444D131249A5DAB00BBC5B1 /* PriceView.m in Sources */,
 				048B439B24932BCA0021A2B6 /* ViewController.m in Sources */,
+				04C6FD4924A6E9A70033F5F0 /* NoviceGuideModel.m in Sources */,
 				048B43EB2493C8040021A2B6 /* CardTableViewCell.m in Sources */,
 				048B43CF24932C3D0021A2B6 /* RecommdViewController.m in Sources */,
 				041307FE249E3DAA005D8E53 /* GonglveModel.m in Sources */,
@@ -647,6 +670,7 @@
 				04541A72249850180013B497 /* GradeTableViewCell.m in Sources */,
 				04541A6D249849A20013B497 /* PriceHistoryTableViewCell.m in Sources */,
 				041307DB249B9349005D8E53 /* GameComment.m in Sources */,
+				04C6FD3E24A629D70033F5F0 /* NoviceguideCollectionViewCell.m in Sources */,
 				041307FA249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.m in Sources */,
 				041307EE249DE702005D8E53 /* GamewalkthroughView.m in Sources */,
 				048B43A124932BCA0021A2B6 /* Jump.xcdatamodeld in Sources */,

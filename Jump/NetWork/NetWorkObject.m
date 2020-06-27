@@ -123,5 +123,18 @@
         failure(error);
     }];
 }
++(void)getNewPlayerListSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure{
+    NSString *url =@"https://switch.jumpvg.com/switch/newPlayer/newPlayerList";
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    [manager setSecurityPolicy:[self customSecurityPolicy]];
+    [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+    
+}
+
 //
 @end

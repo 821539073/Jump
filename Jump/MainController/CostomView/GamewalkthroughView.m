@@ -14,10 +14,13 @@
 #import "YYModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "GameHeaderCollectionView.h"
+#import "NoviceguideCollectionViewCell.h"
+#import "NoviceGuideModel.h"
 @interface GamewalkthroughView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic,strong)  NSArray *gonglveArr;
+@property (nonatomic,strong)  NSArray *playlistArr;
 @property (nonatomic,strong)  NSArray *headeTitleArr;
 @property (nonatomic,strong)  NSArray *toolsArr;
 @end
@@ -51,6 +54,7 @@
     [self addSubview:self.collectionView];
 
     [self.collectionView registerNib:[UINib nibWithNibName:@"GamewalkthroughtCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"GamewalkthroughtCollectionViewCell"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"NoviceguideCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"NoviceguideCollectionViewCell"];
     [self.collectionView registerClass:[GameHeaderCollectionView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
     
      //使用原有重用视图
@@ -68,12 +72,27 @@
         
     }];
     
+    [NetWorkObject getNewPlayerListSuccess:^(id  _Nonnull success) {
+        NoviceGuideModel *playList = [NoviceGuideModel yy_modelWithJSON:success];
+        self.playlistArr = [NSArray arrayWithArray:playList.data.playerList];
+    } failure:^(id  _Nonnull failure) {
+        
+    }];
+    
 }
 #pragma mark collectionView代理方法
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     
     return 4;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 3) {
+        return CGSizeMake(DeviceWidth,120);
+    }else{
+        return CGSizeMake((DeviceWidth - 5)/4, (DeviceWidth - 5)/4);
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -83,30 +102,49 @@
         return 1;
     }if (section == 2) {
         return self.gonglveArr.count;
+    }else if(section == 3){
+        return self.playlistArr.count;
     }
      return 1;
     
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    GamewalkthroughtCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GamewalkthroughtCollectionViewCell" forIndexPath:indexPath];
-    //[cell sizeToFit];
-    cell.backgroundColor = [UIColor whiteColor];
-    if(indexPath.section == 0){
-        cell.nameLabel.text = self.toolsArr[indexPath.row];
-    }else if(indexPath.section == 1){
-        cell.nameLabel.text = @"222" ;
-    }else if(indexPath.section == 2){
-        Allgonglvelist *model = self.gonglveArr[indexPath.row];
-        cell.nameLabel.text = model.title;
-        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.icon]];
+    if (indexPath.section != 3) {
+        GamewalkthroughtCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GamewalkthroughtCollectionViewCell" forIndexPath:indexPath];
+        //[cell sizeToFit];
+        //cell.backgroundColor = [UIColor brownColor];
+        if(indexPath.section == 0){
+            cell.nameLabel.text = self.toolsArr[indexPath.row];
+        }else if(indexPath.section == 1){
+            cell.nameLabel.text = @"222" ;
+        }else if(indexPath.section == 2){
+            Allgonglvelist *model = self.gonglveArr[indexPath.row];
+            cell.nameLabel.text = model.title;
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.icon]];
+        }
+
+        return cell;
+    }else{
+        NoviceguideCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"NoviceguideCollectionViewCell" forIndexPath:indexPath];
+        NoviceGuideplayerlist *playlist = self.playlistArr[indexPath.row];
+        cell.titleLable.text = playlist.name;
+        [cell.imageView sd_setImageWithURL:[NSURL URLWithString:playlist.picUrl]];
+        return cell;
     }
 
-    return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
     return CGSizeMake(DeviceWidth, 44);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout
+ minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    if(section == 3){
+       return 15;
+    }
+    return 0;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
