@@ -22,6 +22,14 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)getAllGonglveSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
 +(void)getNewPlayerListSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
 +(void)getNormalArticleWithId:(NSString *)articleId Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
+
+
+
+//自己服务器
++(void)addToolWithDic:(NSDictionary *)toolDic Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
++(void)searchAllToolSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
++(void)removeAllToolSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
+
 @end
 
 NS_ASSUME_NONNULL_END

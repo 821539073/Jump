@@ -148,4 +148,56 @@
     }];
 }
 //
+
+
+
+
+//自己服务器
++(void)addToolWithDic:(NSDictionary *)toolDic Success:(void(^)(id success))success failure:(void(^)(id failure))failure{
+    
+    
+    NSString *url = [@"http://106.14.127.196:8000/addTool?" stringByAppendingFormat:@"cellName=%@&cellPic=%@",[toolDic objectForKey:@"cellName"],[toolDic objectForKey:@"cellPic"]];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+   // manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    //[manager setSecurityPolicy:[self customSecurityPolicy]];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    [manager GET:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+    
+}
+
++(void)searchAllToolSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure{
+    
+     NSString *url = @"http://106.14.127.196:8000/searchAllTool";
+     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    // manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+     //[manager setSecurityPolicy:[self customSecurityPolicy]];
+     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+     [manager GET:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+         success(responseObject);
+     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         failure(error);
+     }];
+}
++(void)removeAllToolSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure{
+    
+     NSString *url = @"http://106.14.127.196:8000/removeAllTool";
+     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    // manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+     //[manager setSecurityPolicy:[self customSecurityPolicy]];
+     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+     [manager GET:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+         success(responseObject);
+     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         failure(error);
+     }];
+
+    
+}
+//http://106.14.127.196:8000/addTool?cellName=111&cellPic=222
+//http://106.14.127.196:8000/searchAllTool
+//http://106.14.127.196:8000/removeAllTool 
 @end

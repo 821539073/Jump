@@ -74,6 +74,9 @@
 		04C6FD5124A720B50033F5F0 /* NormalArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4F24A720B50033F5F0 /* NormalArticleModel.m */; };
 		04C6FD5524A736710033F5F0 /* NormalArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD5324A736710033F5F0 /* NormalArticleTableViewCell.m */; };
 		04C6FD5624A736710033F5F0 /* NormalArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD5424A736710033F5F0 /* NormalArticleTableViewCell.xib */; };
+		04FDD01F24A8F5B900AF0247 /* CollocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD01D24A8F5B900AF0247 /* CollocateViewController.m */; };
+		04FDD02024A8F5B900AF0247 /* CollocateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */; };
+		04FDD02324A9078700AF0247 /* ToolsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD02224A9078700AF0247 /* ToolsListViewController.m */; };
 		1D3A8D2318A2F64718D91A30 /* Pods_Jump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */; };
 /* End PBXBuildFile section */
 
@@ -205,6 +208,11 @@
 		04C6FD5224A736710033F5F0 /* NormalArticleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalArticleTableViewCell.h; sourceTree = "<group>"; };
 		04C6FD5324A736710033F5F0 /* NormalArticleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalArticleTableViewCell.m; sourceTree = "<group>"; };
 		04C6FD5424A736710033F5F0 /* NormalArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalArticleTableViewCell.xib; sourceTree = "<group>"; };
+		04FDD01C24A8F5B900AF0247 /* CollocateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollocateViewController.h; sourceTree = "<group>"; };
+		04FDD01D24A8F5B900AF0247 /* CollocateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollocateViewController.m; sourceTree = "<group>"; };
+		04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollocateViewController.xib; sourceTree = "<group>"; };
+		04FDD02124A9078700AF0247 /* ToolsListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolsListViewController.h; sourceTree = "<group>"; };
+		04FDD02224A9078700AF0247 /* ToolsListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolsListViewController.m; sourceTree = "<group>"; };
 		3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jump.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE295F98C98750EBC99772E /* Pods-Jump.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.release.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.release.xcconfig"; sourceTree = "<group>"; };
 		4718AF4DB04A69E40A713900 /* Pods-Jump.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.debug.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.debug.xcconfig"; sourceTree = "<group>"; };
@@ -385,12 +393,13 @@
 			isa = PBXGroup;
 			children = (
 				04541A362495E97C0013B497 /* icon */,
-				04541A5E2497A5AC0013B497 /* GameDetailView */,
-				048B43D024932DD40021A2B6 /* CostomView */,
 				048B43CD24932C3D0021A2B6 /* RecommdViewController.h */,
 				048B43CE24932C3D0021A2B6 /* RecommdViewController.m */,
+				04541A5E2497A5AC0013B497 /* GameDetailView */,
+				048B43D024932DD40021A2B6 /* CostomView */,
 				048B43E52493BCCA0021A2B6 /* FindGameViewController.h */,
 				048B43E62493BCCA0021A2B6 /* FindGameViewController.m */,
+				04FDD01B24A8F53100AF0247 /* ControllerView */,
 			);
 			path = MainController;
 			sourceTree = "<group>";
@@ -465,6 +474,18 @@
 				041307FD249E3DAA005D8E53 /* GonglveModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		04FDD01B24A8F53100AF0247 /* ControllerView */ = {
+			isa = PBXGroup;
+			children = (
+				04FDD01C24A8F5B900AF0247 /* CollocateViewController.h */,
+				04FDD01D24A8F5B900AF0247 /* CollocateViewController.m */,
+				04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */,
+				04FDD02124A9078700AF0247 /* ToolsListViewController.h */,
+				04FDD02224A9078700AF0247 /* ToolsListViewController.m */,
+			);
+			path = ControllerView;
 			sourceTree = "<group>";
 		};
 		C6FEE43F31BB0A54859069EA /* Frameworks */ = {
@@ -589,6 +610,7 @@
 				04541A73249850180013B497 /* GradeTableViewCell.xib in Resources */,
 				041307E0249B96F2005D8E53 /* GameDiscountTableViewCell.xib in Resources */,
 				04541A53249742E50013B497 /* icon_back.png in Resources */,
+				04FDD02024A8F5B900AF0247 /* CollocateViewController.xib in Resources */,
 				048B43EC2493C8040021A2B6 /* CardTableViewCell.xib in Resources */,
 				04541A78249853D20013B497 /* GameIntroduceTableViewCell.xib in Resources */,
 				041307D8249B4FE2005D8E53 /* icon_navBack.png in Resources */,
@@ -704,6 +726,8 @@
 				048B43D324932E460021A2B6 /* horizontalSlideButtonView.m in Sources */,
 				04541A88249872390013B497 /* GameIntroduceModle.m in Sources */,
 				04541A682497B16A0013B497 /* LowPriceTableViewCell.m in Sources */,
+				04FDD01F24A8F5B900AF0247 /* CollocateViewController.m in Sources */,
+				04FDD02324A9078700AF0247 /* ToolsListViewController.m in Sources */,
 				048B439524932BCA0021A2B6 /* AppDelegate.m in Sources */,
 				04541A77249853D20013B497 /* GameIntroduceTableViewCell.m in Sources */,
 				04C6FD5124A720B50033F5F0 /* NormalArticleModel.m in Sources */,
