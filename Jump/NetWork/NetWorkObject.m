@@ -194,10 +194,25 @@
      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
          failure(error);
      }];
+}
 
++(void)removeToolWithName:(NSString *)cellName Success:(void(^)(id success))success failure:(void(^)(id failure))failure{
+    
+     NSString *url = [@"http://106.14.127.196:8000/removeToolWithName?cellName=" stringByAppendingString:cellName];
+     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    // manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+     //[manager setSecurityPolicy:[self customSecurityPolicy]];
+     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+     [manager GET:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]] parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+         success(responseObject);
+     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         failure(error);
+     }];
     
 }
+
 //http://106.14.127.196:8000/addTool?cellName=111&cellPic=222
 //http://106.14.127.196:8000/searchAllTool
-//http://106.14.127.196:8000/removeAllTool 
+//http://106.14.127.196:8000/removeAllTool
+//http://106.14.127.196:8000/removeToolWithName?cellName=111
 @end

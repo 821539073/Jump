@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)addToolWithDic:(NSDictionary *)toolDic Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
 +(void)searchAllToolSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
 +(void)removeAllToolSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
++(void)removeToolWithName:(NSString *)cellName Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
 
 @end
 

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view. *h
-    self.listarr = @[@"查看小工具",@"添加小工具",@"删除全部"];
+    self.listarr = @[@"查看小工具"];
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     [self.view addSubview:tableView];
     tableView.delegate = self;
@@ -38,7 +38,7 @@
     static NSString *cellId = @"cellID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellId];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
         cell.textLabel.text = self.listarr[indexPath.row];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -51,16 +51,6 @@
         ToolsListViewController *v1 = [[ToolsListViewController alloc]init];
         v1.title = tempStr;
         [self.navigationController pushViewController:v1 animated:YES];
-    }else if([tempStr isEqualToString:@"添加小工具"]){
-        CollocateViewController *v1 = [[CollocateViewController alloc]init];
-        v1.title = tempStr;
-        [self.navigationController pushViewController:v1 animated:YES];
-    }else if([tempStr isEqualToString:@"删除全部"]){
-        [NetWorkObject removeAllToolSuccess:^(id  _Nonnull success) {
-            NSLog(@"%@",success);
-        } failure:^(id  _Nonnull failure) {
-            
-        }];
     }
 }
 

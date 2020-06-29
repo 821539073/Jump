@@ -77,6 +77,8 @@
 		04FDD01F24A8F5B900AF0247 /* CollocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD01D24A8F5B900AF0247 /* CollocateViewController.m */; };
 		04FDD02024A8F5B900AF0247 /* CollocateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */; };
 		04FDD02324A9078700AF0247 /* ToolsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD02224A9078700AF0247 /* ToolsListViewController.m */; };
+		04FDD02724A9A40200AF0247 /* ToolsListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD02524A9A40200AF0247 /* ToolsListTableViewCell.m */; };
+		04FDD02824A9A40200AF0247 /* ToolsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FDD02624A9A40200AF0247 /* ToolsListTableViewCell.xib */; };
 		1D3A8D2318A2F64718D91A30 /* Pods_Jump.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */; };
 /* End PBXBuildFile section */
 
@@ -213,6 +215,9 @@
 		04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollocateViewController.xib; sourceTree = "<group>"; };
 		04FDD02124A9078700AF0247 /* ToolsListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolsListViewController.h; sourceTree = "<group>"; };
 		04FDD02224A9078700AF0247 /* ToolsListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolsListViewController.m; sourceTree = "<group>"; };
+		04FDD02424A9A40200AF0247 /* ToolsListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToolsListTableViewCell.h; sourceTree = "<group>"; };
+		04FDD02524A9A40200AF0247 /* ToolsListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToolsListTableViewCell.m; sourceTree = "<group>"; };
+		04FDD02624A9A40200AF0247 /* ToolsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolsListTableViewCell.xib; sourceTree = "<group>"; };
 		3B39CA3BDCC1F0B2B0DF2FDE /* Pods_Jump.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jump.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE295F98C98750EBC99772E /* Pods-Jump.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.release.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.release.xcconfig"; sourceTree = "<group>"; };
 		4718AF4DB04A69E40A713900 /* Pods-Jump.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jump.debug.xcconfig"; path = "Target Support Files/Pods-Jump/Pods-Jump.debug.xcconfig"; sourceTree = "<group>"; };
@@ -484,6 +489,9 @@
 				04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */,
 				04FDD02124A9078700AF0247 /* ToolsListViewController.h */,
 				04FDD02224A9078700AF0247 /* ToolsListViewController.m */,
+				04FDD02424A9A40200AF0247 /* ToolsListTableViewCell.h */,
+				04FDD02524A9A40200AF0247 /* ToolsListTableViewCell.m */,
+				04FDD02624A9A40200AF0247 /* ToolsListTableViewCell.xib */,
 			);
 			path = ControllerView;
 			sourceTree = "<group>";
@@ -611,6 +619,7 @@
 				041307E0249B96F2005D8E53 /* GameDiscountTableViewCell.xib in Resources */,
 				04541A53249742E50013B497 /* icon_back.png in Resources */,
 				04FDD02024A8F5B900AF0247 /* CollocateViewController.xib in Resources */,
+				04FDD02824A9A40200AF0247 /* ToolsListTableViewCell.xib in Resources */,
 				048B43EC2493C8040021A2B6 /* CardTableViewCell.xib in Resources */,
 				04541A78249853D20013B497 /* GameIntroduceTableViewCell.xib in Resources */,
 				041307D8249B4FE2005D8E53 /* icon_navBack.png in Resources */,
@@ -728,6 +737,7 @@
 				04541A682497B16A0013B497 /* LowPriceTableViewCell.m in Sources */,
 				04FDD01F24A8F5B900AF0247 /* CollocateViewController.m in Sources */,
 				04FDD02324A9078700AF0247 /* ToolsListViewController.m in Sources */,
+				04FDD02724A9A40200AF0247 /* ToolsListTableViewCell.m in Sources */,
 				048B439524932BCA0021A2B6 /* AppDelegate.m in Sources */,
 				04541A77249853D20013B497 /* GameIntroduceTableViewCell.m in Sources */,
 				04C6FD5124A720B50033F5F0 /* NormalArticleModel.m in Sources */,
