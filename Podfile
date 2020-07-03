@@ -12,7 +12,7 @@ target 'Jump' do
   pod 'SDWebImage', '~> 5.8.0', :inhibit_warnings => true
   pod 'MJRefresh', '~> 3.4.3', :inhibit_warnings => true
   pod 'SDCycleScrollView', '~> 1.80', :inhibit_warnings => true
-  pod 'YYModel', '~> 1.0.4', :inhibit_warnings => true
+  #pod 'YYModel', '~> 1.0.4', :inhibit_warnings => true
   pod 'HBDNavigationBar', '~> 1.7.7', :inhibit_warnings => true
   pod 'Toast', '~> 4.0.0',:inhibit_warnings => true
   pod 'YYKit', :git => 'git@gitee.com:957804349/YYKit.git'#,inhibit_warnings => true

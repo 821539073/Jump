@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <YYKit/YYKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GameIntroduceTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (weak, nonatomic) IBOutlet YYLabel *yyLable;
 
+-(void)addTextWithText:(NSString *)text;
 @end
 
 NS_ASSUME_NONNULL_END

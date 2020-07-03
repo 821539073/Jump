@@ -27,7 +27,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAD-7L-juZ">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAD-7L-juZ" customClass="YYLabel">
                         <rect key="frame" x="5" y="45" width="310" height="112"/>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -43,7 +43,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="bgView" destination="H2p-sc-9uM" id="sx1-r2-wGC"/>
+                <outlet property="yyLable" destination="QAD-7L-juZ" id="OKw-Rt-bgv"/>
             </connections>
             <point key="canvasLocation" x="-36.231884057971016" y="-4.6875"/>
         </tableViewCell>

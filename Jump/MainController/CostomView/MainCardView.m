@@ -15,7 +15,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "MJRefresh.h"
 #import "GameDataModel.h"
-#import "YYModel.h"
+#import <YYKit/YYKit.h>
 #import "GameDeatilViewController.h"
 @interface MainCardView()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,HorizontalSlideButtonDelegate>
 @property(nonatomic,strong)SDCycleScrollView *cycleScrollView;
@@ -312,7 +312,7 @@
 -(void)getGameListWithModelDic:(NSMutableDictionary *)ModeleDic{
     
     [NetWorkObject GameWithSearchType: ModeleDic Success:^(id  _Nonnull success) {
-        GameDataModel *gameDataModel = [GameDataModel yy_modelWithJSON:success];
+        GameDataModel *gameDataModel = [GameDataModel modelWithJSON:success];
         for (Games *tempmodel in gameDataModel.data.games) {
             [self.gameListArr addObject:tempmodel];
         }

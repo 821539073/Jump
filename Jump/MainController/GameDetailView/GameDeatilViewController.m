@@ -14,12 +14,13 @@
 #import "GameNameTableViewCell.h"
 #import "LowPriceTableViewCell.h"
 #import "GameIntroduceModle.h"
-#import "YYModel.h"
+//#import "YYModel.h"
 #import "GameComment.h"
 #import "GameDiscountTableViewCell.h"
 #import "GameDisCountModel.h"
 #import "GradeTableViewCell.h"
-#import "<YYKit/YYKit.h>"
+#import <YYKit/YYKit.h>
+#import "GameIntroduceTableViewCell.h"
 @interface GameDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView *gameDetailTableView;
 //@property(nonatomic,strong) UIScrollView *scrollView;
@@ -73,7 +74,7 @@
 }
 -(void)GameFetchInfo{
     [NetWorkObject GameDetialCode:self.appid Success:^(id  _Nonnull success) {
-        self.dataModel = [GameIntroduceModle yy_modelWithDictionary:success];
+        self.dataModel = [GameIntroduceModle modelWithDictionary:success];
         [self.gameDetailTableView reloadData];
     } failure:^(id  _Nonnull failure) {
         NSLog(@"%@",failure);
@@ -82,7 +83,7 @@
 -(void)FetchListGameComment{
     
     [NetWorkObject ListGameComment:self.appid Success:^(id  _Nonnull success) {
-        self.GameCommentModel = [GameComment yy_modelWithJSON:success];
+        self.GameCommentModel = [GameComment modelWithJSON:success];
     } failure:^(id  _Nonnull failure) {
         NSLog(@"%@",failure);
     }];
@@ -175,6 +176,9 @@
             return 0;
         }
         return 90;
+
+    }else if(indexPath.section == 0&&indexPath.row == 5){
+        return 100;
 
     }
     
@@ -277,6 +281,18 @@
             
         }
         return cell;
+    }else if (indexPath.section == 0&&indexPath.row == 5) {
+        static NSString *cellId = @"cellID5";
+        GameIntroduceTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"GameIntroduceTableViewCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            if (self.dataModel.data.game.detail.length != 0) {
+                [cell addTextWithText:self.dataModel.data.game.detail];
+            }
+        }
+        return cell;
     }else{
 
         static NSString *cellId = @"cellID";
@@ -303,7 +319,7 @@
             self.discounrowOnOff = YES;
             if (self.gameDiscountModel == nil) {
                     [NetWorkObject GameDiscount:self.appid Success:^(id  _Nonnull success) {
-                    self.gameDiscountModel = [GameDisCountModel yy_modelWithJSON:success];
+                    self.gameDiscountModel = [GameDisCountModel modelWithJSON:success];
                         [self.gameDetailTableView reloadData];
                 } failure:^(id  _Nonnull failure) {
                     

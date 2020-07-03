@@ -9,7 +9,7 @@
 #import "NormalArticleTableViewController.h"
 #import "NetWorkObject.h"
 #import "NormalArticleModel.h"
-#import "YYModel.h"
+#import <YYKit/YYKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "NormalArticleTableViewCell.h"
 @interface NormalArticleTableViewController ()
@@ -33,7 +33,7 @@
 
 -(void)getNormalArticle{
     [NetWorkObject getNormalArticleWithId:self.articleId Success:^(id  _Nonnull success) {
-        NormalArticleModel *model = [NormalArticleModel yy_modelWithJSON:success];
+        NormalArticleModel *model = [NormalArticleModel modelWithJSON:success];
         self.contentList = [NSArray arrayWithArray:model.data.contentList];
         self.articleTitle = model.data.name;
         [self.tableView reloadData];

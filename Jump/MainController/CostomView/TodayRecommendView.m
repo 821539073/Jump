@@ -12,7 +12,7 @@
 #import "NetWorkObject.h"
 #import "MJRefresh.h"
 #import "TodayRecomModel.h"
-#import "YYModel.h"
+#import <YYKit/YYKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface TodayRecommendView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -39,7 +39,7 @@
 
 -(void)fetchData{
     [NetWorkObject TodayGameRecommendoffset:@"0" Success:^(id  _Nonnull success) {
-        TodayRecomModel *model = [TodayRecomModel yy_modelWithJSON:success];
+        TodayRecomModel *model = [TodayRecomModel modelWithJSON:success];
         [self.gameListArr addObjectsFromArray:model.data.information_flow];
         [self.tableView.mj_footer endRefreshing];
         [self.tableView reloadData];

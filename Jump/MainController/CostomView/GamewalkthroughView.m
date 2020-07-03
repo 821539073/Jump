@@ -11,7 +11,7 @@
 #import "GamewalkthroughtCollectionViewCell.h"
 #import "NetWorkObject.h"
 #import "GonglveModel.h"
-#import "YYModel.h"
+#import <YYKit/YYKit.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "GameHeaderCollectionView.h"
 #import "NoviceguideCollectionViewCell.h"
@@ -67,7 +67,7 @@
 }
 -(void)fetchData{
     [NetWorkObject getAllGonglveSuccess:^(id  _Nonnull success) {
-        GonglveModel *gonglve = [GonglveModel yy_modelWithJSON:success];
+        GonglveModel *gonglve = [GonglveModel modelWithJSON:success];
         self.gonglveArr = [NSArray arrayWithArray:gonglve.data.allGonglveList];
         [self.collectionView reloadData];
     } failure:^(id  _Nonnull failure) {
@@ -75,7 +75,7 @@
     }];
     
     [NetWorkObject getNewPlayerListSuccess:^(id  _Nonnull success) {
-        NoviceGuideModel *playList = [NoviceGuideModel yy_modelWithJSON:success];
+        NoviceGuideModel *playList = [NoviceGuideModel modelWithJSON:success];
         self.playlistArr = [NSArray arrayWithArray:playList.data.playerList];
         [self.collectionView reloadData];
     } failure:^(id  _Nonnull failure) {
