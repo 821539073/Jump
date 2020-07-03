@@ -10,20 +10,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="188" id="KGk-i7-Jjw" customClass="GradeTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="GradeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="188"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="媒体评分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrC-x3-E0g">
                         <rect key="frame" x="5" y="5" width="70" height="35"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="2XH-ej-H5c"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -35,7 +35,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="UKd-B7-6i6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -51,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2Gc-tr-Llg" firstAttribute="leading" secondItem="7xd-X5-Icq" secondAttribute="leading" id="2zU-cO-8wy"/>
                             <constraint firstAttribute="height" constant="44" id="92x-jN-fdA"/>
@@ -62,38 +62,23 @@
                             <constraint firstItem="2Gc-tr-Llg" firstAttribute="top" secondItem="7xd-X5-Icq" secondAttribute="top" id="utb-cb-1SE"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OY1-1w-MNk">
-                        <rect key="frame" x="5" y="118" width="310" height="65"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="媒体评分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTT-GM-2HQ">
-                        <rect key="frame" x="5" y="83" width="70" height="35"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="Nce-Cq-QFm"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="QrC-x3-E0g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="2ll-a5-4I1"/>
-                    <constraint firstAttribute="bottom" secondItem="OY1-1w-MNk" secondAttribute="bottom" constant="5" id="GkF-40-p0K"/>
                     <constraint firstItem="QrC-x3-E0g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Kdp-wn-b3j"/>
                     <constraint firstItem="7xd-X5-Icq" firstAttribute="top" secondItem="QrC-x3-E0g" secondAttribute="bottom" constant="-1" id="LdW-IX-E2k"/>
-                    <constraint firstItem="uTT-GM-2HQ" firstAttribute="top" secondItem="7xd-X5-Icq" secondAttribute="bottom" id="Rzy-OU-28T"/>
-                    <constraint firstItem="OY1-1w-MNk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="V6L-fd-xzQ"/>
-                    <constraint firstAttribute="trailing" secondItem="OY1-1w-MNk" secondAttribute="trailing" constant="5" id="dhe-16-jTS"/>
                     <constraint firstAttribute="trailing" secondItem="7xd-X5-Icq" secondAttribute="trailing" constant="5" id="p69-Vv-u5S"/>
-                    <constraint firstItem="OY1-1w-MNk" firstAttribute="top" secondItem="uTT-GM-2HQ" secondAttribute="bottom" id="rWQ-eJ-Puj"/>
-                    <constraint firstItem="uTT-GM-2HQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="uZ6-lm-ulz"/>
-                    <constraint firstItem="OY1-1w-MNk" firstAttribute="top" secondItem="uTT-GM-2HQ" secondAttribute="bottom" id="wxJ-hO-LZs"/>
                     <constraint firstItem="7xd-X5-Icq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="yh7-07-nud"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="220.28985507246378" y="79.6875"/>
+            <connections>
+                <outlet property="GradeLabel" destination="2Gc-tr-Llg" id="vlZ-6E-AuJ"/>
+                <outlet property="bgView" destination="7xd-X5-Icq" id="W9Y-F8-7dU"/>
+                <outlet property="scoreLable" destination="jVL-07-loE" id="0Md-sy-I2k"/>
+            </connections>
+            <point key="canvasLocation" x="-81" y="54"/>
         </tableViewCell>
     </objects>
 </document>

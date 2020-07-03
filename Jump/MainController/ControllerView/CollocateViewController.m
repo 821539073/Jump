@@ -8,6 +8,7 @@
 
 #import "CollocateViewController.h"
 #import "NetWorkObject.h"
+#import "Toast.h"
 @interface CollocateViewController ()
 @property(nonatomic,strong)NSMutableDictionary *toolDic;
 @end
@@ -45,8 +46,9 @@
     
     [NetWorkObject addToolWithDic:self.toolDic Success:^(id  _Nonnull success) {
         NSLog(@"%@",success);
+        [self.view.window makeToast:[success objectForKey:@"result"]];
     } failure:^(id  _Nonnull failure) {
-        
+        //[alert showSuccess:self title:@"提示" subTitle:[failure objectForKey:@"result"] closeButtonTitle:@"Done" duration:0.0f];
     }];
 }
 

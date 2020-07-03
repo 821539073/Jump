@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  工具名称" minimumFontSize="17" id="RdX-yh-qdd">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="第一" borderStyle="line" placeholder="  工具名称" minimumFontSize="17" id="RdX-yh-qdd">
                     <rect key="frame" x="103" y="83" width="209" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -30,7 +30,7 @@
                         <action selector="toolNameTextField:" destination="-1" eventType="editingDidEnd" id="t2f-HO-5eb"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  工具图片地址" minimumFontSize="17" id="xDI-Pa-1Ab">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://switch-cdn.vgjump.com/b0b86f06a8addc96af4ba2b74410e4b5" borderStyle="line" placeholder="  工具图片地址" minimumFontSize="17" id="xDI-Pa-1Ab">
                     <rect key="frame" x="103" y="151" width="209" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>

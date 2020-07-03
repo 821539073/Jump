@@ -17,6 +17,7 @@
 #import "NoviceguideCollectionViewCell.h"
 #import "NoviceGuideModel.h"
 #import "NormalArticleTableViewController.h"
+
 @interface GamewalkthroughView()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -42,7 +43,7 @@
 -(void)drawView{
     
     self.headeTitleArr = @[@"小工具",@"收藏的攻略",@"全部攻略",@"新手必读"];
-    self.toolsArr = @[@"Switch相册同步",@"大头菜交易",@"大头菜理财"];
+    //self.toolsArr = @[@"Switch相册同步",@"大头菜交易",@"大头菜理财"];
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -76,6 +77,13 @@
     [NetWorkObject getNewPlayerListSuccess:^(id  _Nonnull success) {
         NoviceGuideModel *playList = [NoviceGuideModel yy_modelWithJSON:success];
         self.playlistArr = [NSArray arrayWithArray:playList.data.playerList];
+        [self.collectionView reloadData];
+    } failure:^(id  _Nonnull failure) {
+        
+    }];
+    
+    [NetWorkObject searchAllToolSuccess:^(id  _Nonnull success) {
+        self.toolsArr = [success objectForKey:@"result"];
         [self.collectionView reloadData];
     } failure:^(id  _Nonnull failure) {
         
@@ -118,7 +126,9 @@
         //[cell sizeToFit];
         //cell.backgroundColor = [UIColor brownColor];
         if(indexPath.section == 0){
-            cell.nameLabel.text = self.toolsArr[indexPath.row];
+            NSDictionary *tempDic = self.toolsArr[indexPath.row];
+            cell.nameLabel.text = [tempDic objectForKey:@"cellName"];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString: [tempDic objectForKey:@"cellPic"]]];
         }else if(indexPath.section == 1){
             cell.nameLabel.text = @"222" ;
         }else if(indexPath.section == 2){

@@ -27,25 +27,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lni-bo-Alc">
-                        <rect key="frame" x="5" y="40" width="315" height="122"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAD-7L-juZ">
+                        <rect key="frame" x="5" y="45" width="310" height="112"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Lni-bo-Alc" secondAttribute="trailing" id="8eN-Go-J0l"/>
-                    <constraint firstAttribute="bottom" secondItem="Lni-bo-Alc" secondAttribute="bottom" id="DQ9-Fl-gek"/>
-                    <constraint firstItem="Lni-bo-Alc" firstAttribute="top" secondItem="Ziw-I3-XMU" secondAttribute="bottom" id="NBb-GM-rOP"/>
+                    <constraint firstAttribute="trailing" secondItem="QAD-7L-juZ" secondAttribute="trailing" constant="5" id="9MM-Xg-jA5"/>
                     <constraint firstItem="Ziw-I3-XMU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="QWn-2w-fzQ"/>
+                    <constraint firstItem="QAD-7L-juZ" firstAttribute="top" secondItem="Ziw-I3-XMU" secondAttribute="bottom" constant="5" id="Z2k-3w-aPf"/>
                     <constraint firstItem="Ziw-I3-XMU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="jIH-kY-Vvw"/>
-                    <constraint firstItem="Lni-bo-Alc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="tI2-Pi-SPP"/>
+                    <constraint firstAttribute="bottom" secondItem="QAD-7L-juZ" secondAttribute="bottom" constant="5" id="oCd-rI-aJy"/>
+                    <constraint firstItem="QAD-7L-juZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="xpm-qz-nwT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bgView" destination="H2p-sc-9uM" id="sx1-r2-wGC"/>
+            </connections>
             <point key="canvasLocation" x="-36.231884057971016" y="-4.6875"/>
         </tableViewCell>
     </objects>

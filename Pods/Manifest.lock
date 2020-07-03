@@ -22,6 +22,10 @@ PODS:
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
+  - Toast (4.0.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -31,10 +35,12 @@ DEPENDENCIES:
   - MJRefresh (~> 3.4.3)
   - SDCycleScrollView (~> 1.80)
   - SDWebImage (~> 5.8.0)
+  - Toast (~> 4.0.0)
+  - "YYKit (from `git@gitee.com:957804349/YYKit.git`)"
   - YYModel (~> 1.0.4)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  "git@gitee.com:957804349/Specs.git":
     - AFNetworking
     - HBDNavigationBar
     - Masonry
@@ -42,6 +48,18 @@ SPEC REPOS:
     - SDCycleScrollView
     - SDWebImage
     - YYModel
+  trunk:
+    - SDWebImage
+    - Toast
+
+EXTERNAL SOURCES:
+  YYKit:
+    :git: "git@gitee.com:957804349/YYKit.git"
+
+CHECKOUT OPTIONS:
+  YYKit:
+    :commit: 4e1bd1cfcdb3331244b219cbd37cc9b1ccb62b7a
+    :git: "git@gitee.com:957804349/YYKit.git"
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -50,8 +68,10 @@ SPEC CHECKSUMS:
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: c86b9b3c693bb79672b134d6864a38c23f48c313
+PODFILE CHECKSUM: 3c92575ac534643e2f47a0ceb326dbd258106810
 
 COCOAPODS: 1.9.3

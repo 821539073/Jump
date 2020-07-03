@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GradeTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *GradeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLable;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 @end
 

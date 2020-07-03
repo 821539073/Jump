@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view. *h
-    self.listarr = @[@"查看小工具"];
+    self.listarr = @[@"游戏攻略-小工具"];
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     [self.view addSubview:tableView];
     tableView.delegate = self;
@@ -47,7 +47,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *tempStr =  self.listarr[indexPath.row];
-    if ([tempStr isEqualToString:@"查看小工具"]) {
+    if ([tempStr isEqualToString:@"游戏攻略-小工具"]) {
         ToolsListViewController *v1 = [[ToolsListViewController alloc]init];
         v1.title = tempStr;
         [self.navigationController pushViewController:v1 animated:YES];

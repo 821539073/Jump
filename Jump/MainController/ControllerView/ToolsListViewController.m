@@ -39,6 +39,7 @@
 -(void)fetchData{
     
     [NetWorkObject searchAllToolSuccess:^(id  _Nonnull success) {
+        [self.toolList removeAllObjects];
         [self.toolList addObjectsFromArray:[success objectForKey:@"result"]];
         [self.tableView reloadData];
     } failure:^(id  _Nonnull failure) {

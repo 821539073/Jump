@@ -18,6 +18,8 @@
 #import "GameComment.h"
 #import "GameDiscountTableViewCell.h"
 #import "GameDisCountModel.h"
+#import "GradeTableViewCell.h"
+#import "<YYKit/YYKit.h>"
 @interface GameDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView *gameDetailTableView;
 //@property(nonatomic,strong) UIScrollView *scrollView;
@@ -168,6 +170,12 @@
             return 44;
         }
 
+    }else if(indexPath.section == 0&&indexPath.row == 4){
+        if (self.dataModel.data.game.rate == 0) {
+            return 0;
+        }
+        return 90;
+
     }
     
     return 44;;
@@ -250,6 +258,22 @@
             cell = [nib objectAtIndex:0];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell ChartViewData:self.gameDiscountModel];
+            
+        }
+        return cell;
+    }else if(indexPath.section == 0&&indexPath.row == 4){
+        static NSString *cellId = @"cellID4";
+        GradeTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"GradeTableViewCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            //[cell ChartViewData:self.gameDiscountModel];
+            NSMutableAttributedString *tempPriceStr = [[NSMutableAttributedString alloc]initWithString:@"metacritic\n媒体综合评分"];
+            [tempPriceStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, 10)];
+            [tempPriceStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, 10)];
+            [cell.GradeLabel setAttributedText:tempPriceStr];
+            cell.scoreLable.text = [NSString stringWithFormat:@"%ld", (long)self.dataModel.data.game.rate];
             
         }
         return cell;
