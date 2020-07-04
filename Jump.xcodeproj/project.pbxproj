@@ -74,6 +74,9 @@
 		04C6FD5124A720B50033F5F0 /* NormalArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4F24A720B50033F5F0 /* NormalArticleModel.m */; };
 		04C6FD5524A736710033F5F0 /* NormalArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD5324A736710033F5F0 /* NormalArticleTableViewCell.m */; };
 		04C6FD5624A736710033F5F0 /* NormalArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD5424A736710033F5F0 /* NormalArticleTableViewCell.xib */; };
+		04E7337224B02D9E0045DC45 /* IsHaveGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7337024B02D9E0045DC45 /* IsHaveGameTableViewCell.m */; };
+		04E7337324B02D9E0045DC45 /* IsHaveGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E7337124B02D9E0045DC45 /* IsHaveGameTableViewCell.xib */; };
+		04E7337924B02FC50045DC45 /* icon_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E7337824B02FC50045DC45 /* icon_add.png */; };
 		04FDD01F24A8F5B900AF0247 /* CollocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD01D24A8F5B900AF0247 /* CollocateViewController.m */; };
 		04FDD02024A8F5B900AF0247 /* CollocateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */; };
 		04FDD02324A9078700AF0247 /* ToolsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD02224A9078700AF0247 /* ToolsListViewController.m */; };
@@ -210,6 +213,10 @@
 		04C6FD5224A736710033F5F0 /* NormalArticleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalArticleTableViewCell.h; sourceTree = "<group>"; };
 		04C6FD5324A736710033F5F0 /* NormalArticleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalArticleTableViewCell.m; sourceTree = "<group>"; };
 		04C6FD5424A736710033F5F0 /* NormalArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NormalArticleTableViewCell.xib; sourceTree = "<group>"; };
+		04E7336F24B02D9E0045DC45 /* IsHaveGameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsHaveGameTableViewCell.h; sourceTree = "<group>"; };
+		04E7337024B02D9E0045DC45 /* IsHaveGameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsHaveGameTableViewCell.m; sourceTree = "<group>"; };
+		04E7337124B02D9E0045DC45 /* IsHaveGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IsHaveGameTableViewCell.xib; sourceTree = "<group>"; };
+		04E7337824B02FC50045DC45 /* icon_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_add.png; sourceTree = "<group>"; };
 		04FDD01C24A8F5B900AF0247 /* CollocateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollocateViewController.h; sourceTree = "<group>"; };
 		04FDD01D24A8F5B900AF0247 /* CollocateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollocateViewController.m; sourceTree = "<group>"; };
 		04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollocateViewController.xib; sourceTree = "<group>"; };
@@ -261,6 +268,7 @@
 		04541A362495E97C0013B497 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				04E7337824B02FC50045DC45 /* icon_add.png */,
 				041307E1249B9882005D8E53 /* icon_opneTable.png */,
 				041307D7249B4FE2005D8E53 /* icon_navBack.png */,
 				0444D12D249A569600BBC5B1 /* icon_question.png */,
@@ -311,6 +319,9 @@
 				041307DC249B96F2005D8E53 /* GameDiscountTableViewCell.h */,
 				041307DD249B96F2005D8E53 /* GameDiscountTableViewCell.m */,
 				041307DE249B96F2005D8E53 /* GameDiscountTableViewCell.xib */,
+				04E7336F24B02D9E0045DC45 /* IsHaveGameTableViewCell.h */,
+				04E7337024B02D9E0045DC45 /* IsHaveGameTableViewCell.m */,
+				04E7337124B02D9E0045DC45 /* IsHaveGameTableViewCell.xib */,
 				041307E6249BBA50005D8E53 /* ChartView.h */,
 				041307E7249BBA50005D8E53 /* ChartView.m */,
 			);
@@ -611,6 +622,7 @@
 			files = (
 				04541A6E249849A20013B497 /* PriceHistoryTableViewCell.xib in Resources */,
 				048B43E0249399EA0021A2B6 /* LoginViewController.xib in Resources */,
+				04E7337924B02FC50045DC45 /* icon_add.png in Resources */,
 				04541A692497B16A0013B497 /* LowPriceTableViewCell.xib in Resources */,
 				04541A4D2496FCA90013B497 /* icon_alert.png in Resources */,
 				048B43A624932BCB0021A2B6 /* LaunchScreen.storyboard in Resources */,
@@ -634,6 +646,7 @@
 				048B439E24932BCA0021A2B6 /* Main.storyboard in Resources */,
 				048B43F02494B4480021A2B6 /* DigiCert Global Root CA.cer in Resources */,
 				04C6FD3F24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib in Resources */,
+				04E7337324B02D9E0045DC45 /* IsHaveGameTableViewCell.xib in Resources */,
 				041307FB249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.xib in Resources */,
 				041307F3249DEB7D005D8E53 /* TodayRecommendTableViewCell.xib in Resources */,
 				049BAA042498A3C200CDEB2A /* icon_videoplay.png in Resources */,
@@ -711,6 +724,7 @@
 				041307E8249BBA50005D8E53 /* ChartView.m in Sources */,
 				041307E5249B9B85005D8E53 /* GameDisCountModel.m in Sources */,
 				049BAA082499005500CDEB2A /* GameNameTableViewCell.m in Sources */,
+				04E7337224B02D9E0045DC45 /* IsHaveGameTableViewCell.m in Sources */,
 				041307DF249B96F2005D8E53 /* GameDiscountTableViewCell.m in Sources */,
 				0444D131249A5DAB00BBC5B1 /* PriceView.m in Sources */,
 				04C6FD4D24A709D20033F5F0 /* NormalArticleTableViewController.m in Sources */,

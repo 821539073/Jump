@@ -21,6 +21,7 @@
 #import "GradeTableViewCell.h"
 #import <YYKit/YYKit.h>
 #import "GameIntroduceTableViewCell.h"
+#import "IsHaveGameTableViewCell.h"
 @interface GameDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong) UITableView *gameDetailTableView;
 //@property(nonatomic,strong) UIScrollView *scrollView;
@@ -178,7 +179,12 @@
         return 90;
 
     }else if(indexPath.section == 0&&indexPath.row == 5){
-        return 100;
+        
+        return 162;
+
+    }else if(indexPath.section == 0&&indexPath.row == 6){
+        
+        return 150 ;
 
     }
     
@@ -291,6 +297,15 @@
             if (self.dataModel.data.game.detail.length != 0) {
                 [cell addTextWithText:self.dataModel.data.game.detail];
             }
+        }
+        return cell;
+    }else if(indexPath.section == 0&&indexPath.row == 6){
+        static NSString *cellId = @"cellID6";
+        IsHaveGameTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"IsHaveGameTableViewCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         return cell;
     }else{
