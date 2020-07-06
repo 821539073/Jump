@@ -16,4 +16,5 @@ target 'Jump' do
   pod 'HBDNavigationBar', '~> 1.7.7', :inhibit_warnings => true
   pod 'Toast', '~> 4.0.0',:inhibit_warnings => true
   pod 'YYKit', :git => 'git@gitee.com:957804349/YYKit.git'#,inhibit_warnings => true
+  pod 'YBAttributeTextTapAction'
 end

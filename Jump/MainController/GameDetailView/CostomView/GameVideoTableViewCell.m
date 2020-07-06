@@ -80,6 +80,10 @@
         }
         [button sd_setImageWithURL:[NSURL URLWithString:tempVideoPic] forState:UIControlStateNormal];
     }else{
+        if (videoArr.count == 0) {
+            [self.showImageView sd_setImageWithURL:[NSURL URLWithString:imageArr[0]]];
+        }
+        
         [button sd_setImageWithURL:[NSURL URLWithString:imageArr[i - videoArr.count]] forState:UIControlStateNormal];
     }
         

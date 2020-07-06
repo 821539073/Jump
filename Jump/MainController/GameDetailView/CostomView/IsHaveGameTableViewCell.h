@@ -1,4 +1,4 @@
-//
+  //
 //  IsHaveGameTableViewCell.h
 //  Jump
 //
@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UIButton *unCommentButton;
 @property (weak, nonatomic) IBOutlet UIView *bottomBGview;
+@property (weak, nonatomic) IBOutlet UIView *bgview;
+
+
+-(void)cellStyle1;
 
 @end
 

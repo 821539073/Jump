@@ -22,13 +22,16 @@
 #import <YYKit/YYKit.h>
 #import "GameIntroduceTableViewCell.h"
 #import "IsHaveGameTableViewCell.h"
-@interface GameDeatilViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface GameDeatilViewController ()<UITableViewDelegate,UITableViewDataSource,GameIntroduceTableViewCellDelegate>
 @property(nonatomic,strong) UITableView *gameDetailTableView;
 //@property(nonatomic,strong) UIScrollView *scrollView;
 @property(nonatomic,strong) GameIntroduceModle *dataModel;
 @property(nonatomic,strong) GameComment *GameCommentModel;
 @property(nonatomic,strong) GameDisCountModel*gameDiscountModel;
 @property(nonatomic,assign) BOOL discounrowOnOff;
+@property(nonatomic,assign) BOOL LabelOpen;
+
+@property(nonatomic,assign) float deatilRowHeight;
 @end
 
 @implementation GameDeatilViewController
@@ -36,6 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.LabelOpen = YES;
     horizontalSlideButtonView *horizonTalButton = [[horizontalSlideButtonView alloc]init];
      [self.view addSubview:horizonTalButton];
      [horizonTalButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,7 +72,7 @@
     
     [self gameDetailView];
     [self GameFetchInfo];
-    //[self FetchListGameComment];
+    [self FetchListGameComment];
 
 
     
@@ -85,6 +89,7 @@
     
     [NetWorkObject ListGameComment:self.appid Success:^(id  _Nonnull success) {
         self.GameCommentModel = [GameComment modelWithJSON:success];
+        [self.gameDetailTableView reloadData];
     } failure:^(id  _Nonnull failure) {
         NSLog(@"%@",failure);
     }];
@@ -180,7 +185,20 @@
 
     }else if(indexPath.section == 0&&indexPath.row == 5){
         
-        return 162;
+        if (self.dataModel.data.game.detail.length == 0) {
+            return 0;
+        }
+        [self deatilRowHeightWithString:@""];
+        if (self.LabelOpen == NO) {
+            //[self deatilRowHeightWithString:@""];
+            return self.deatilRowHeight + 45;
+        }if (self.LabelOpen == YES) {
+            if (self.deatilRowHeight + 45 < 162) {
+                return self.deatilRowHeight + 45;
+            }else{
+                return 162;
+            }
+        }
 
     }else if(indexPath.section == 0&&indexPath.row == 6){
         
@@ -195,6 +213,8 @@
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
         return 10;
+    }else if(section == 1){
+        return self.GameCommentModel.data.comment.count;
     }
     return 1;
 }
@@ -294,6 +314,7 @@
             NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"GameIntroduceTableViewCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.delegate = self;
             if (self.dataModel.data.game.detail.length != 0) {
                 [cell addTextWithText:self.dataModel.data.game.detail];
             }
@@ -306,6 +327,7 @@
             NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"IsHaveGameTableViewCell" owner:self options:nil];
             cell = [nib objectAtIndex:0];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell cellStyle1];
         }
         return cell;
     }else{
@@ -360,7 +382,24 @@
     return fram.size.height;
 }
 
+-(void)reloadTableViewCellHeight{
 
+    self.LabelOpen = NO?YES:NO;
+    [self.gameDetailTableView reloadData];
+    
+}
+
+-(void)deatilRowHeightWithString:(NSString *)deatil{
+
+    UILabel *label = [[UILabel alloc]init];
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentLeft;
+    label.text = self.dataModel.data.game.detail;
+    label.font = [UIFont systemFontOfSize:16];
+    CGSize labelSize = [label sizeThatFits:CGSizeMake(DeviceWidth - 10, MAXFLOAT)];
+    CGFloat height = ceil(labelSize.height) + 1;
+    self.deatilRowHeight = height;
+}
 /*E
 #pragma mark - Navigation
 

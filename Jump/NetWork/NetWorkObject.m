@@ -147,8 +147,20 @@
         failure(error);
     }];
 }
-//
-
++(void)getPostListEntityIdStr:(NSString *)entityIdStr Success:(void(^)(id success))success failure:(void(^)(id failure))failure{
+    
+    NSString *url = [@"https://switch.jumpvg.com/switch/post/list?moduleId=1&entityIdStr=%@&offset=0&sortType=postDefault&version=2&limit=10" stringByAppendingString:entityIdStr];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    [manager setSecurityPolicy:[self customSecurityPolicy]];
+    [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+    
+    
+}
 
 
 

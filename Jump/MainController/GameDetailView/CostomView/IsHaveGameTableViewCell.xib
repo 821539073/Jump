@@ -22,21 +22,19 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qv-np-OZM">
                                 <rect key="frame" x="5" y="3" width="290" height="34"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="rUo-MF-iqC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKQ-Gj-Asl">
                                 <rect key="frame" x="5" y="42" width="290" height="32"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="JeK-w2-0OC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -46,15 +44,19 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSr-xU-Xv2">
                                         <rect key="frame" x="142" y="5" width="105.5" height="36"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="不推荐">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-ty-Zrh">
                                         <rect key="frame" x="16.5" y="5" width="105.5" height="36"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="推荐">
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="KSr-xU-Xv2" firstAttribute="top" secondItem="Nx7-7E-aRl" secondAttribute="top" constant="5" id="0CD-Bz-XWo"/>
                                     <constraint firstAttribute="centerX" secondItem="ezg-ty-Zrh" secondAttribute="trailing" constant="10" id="Bk9-KM-A0A"/>
@@ -68,7 +70,6 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnj-iH-6ar">
                                 <rect key="frame" x="230" y="3" width="65" height="40"/>
-                                <color key="backgroundColor" red="0.30155969090000001" green="1" blue="0.47857370339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="PLa-GT-HEH"/>
                                     <constraint firstAttribute="height" constant="40" id="aRY-aM-so6"/>
@@ -80,7 +81,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rKQ-Gj-Asl" firstAttribute="top" secondItem="3qv-np-OZM" secondAttribute="bottom" constant="5" id="0Pj-Ci-Zjj"/>
                             <constraint firstItem="rKQ-Gj-Asl" firstAttribute="leading" secondItem="uVg-bD-xry" secondAttribute="leading" constant="5" id="0l6-nu-Ysk"/>
@@ -107,6 +108,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="bgview" destination="uVg-bD-xry" id="SnW-h4-BqA"/>
                 <outlet property="bottomBGview" destination="Nx7-7E-aRl" id="W1B-5x-PPV"/>
                 <outlet property="centerLable" destination="rKQ-Gj-Asl" id="LZ8-CD-roi"/>
                 <outlet property="commentButton" destination="ezg-ty-Zrh" id="OEJ-VG-9SD"/>

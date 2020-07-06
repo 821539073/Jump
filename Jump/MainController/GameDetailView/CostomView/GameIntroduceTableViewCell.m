@@ -16,55 +16,49 @@
     // Initialization code
    // self.yyLable.text = @"sasasasasasas";
     self.yyLable.userInteractionEnabled = YES;
-
-    
-}
-
--(void)addTextWithText:(NSString *)text{
-    
-
-    NSString *transfoText = [[text stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
-    
     self.yyLable.numberOfLines = 0;
-    NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = 5;
-    
-    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-    [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
-    [attributes setObject:[UIFont systemFontOfSize:16] forKey:NSFontAttributeName];
-
-    self.yyLable.attributedText = [[NSAttributedString alloc] initWithString:transfoText attributes:attributes];
-    [(NSMutableAttributedString *)self.yyLable.attributedText addAttribute:NSKernAttributeName value:@(3) range:NSMakeRange(0, transfoText.length)];
 
     
-    NSString *moreString = @"展开";
-    NSMutableAttributedString *temptext = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"...%@", moreString]];
-    NSRange expandRange = [temptext.string rangeOfString:moreString];
-    
-    [temptext addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:expandRange];
-    [temptext addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:expandRange];
-    
-     
-    
-    YYTextHighlight *hi = [YYTextHighlight new];
-    [temptext setTextHighlight:hi range:[temptext.string rangeOfString:moreString]];
-    
-    //__weak typeof(self) weakSelf = self;
-    hi.tapAction = ^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-        //点击展开
-        //[weakSelf setFrame:YES];
-        NSLog(@"展开-----");
-    };
-    YYLabel *seeMore = [YYLabel new];
-    seeMore.attributedText = temptext;
-    [seeMore sizeToFit];
-    
-    NSAttributedString *truncationToken = [NSAttributedString attachmentStringWithContent:seeMore contentMode:UIViewContentModeCenter attachmentSize:seeMore.frame.size alignToFont:temptext.font alignment:YYTextVerticalAlignmentTop];
-    
-    self.yyLable.truncationToken = truncationToken;
-   
-
 }
+
+-(void)addTextWithText:(NSString *)deatilText{
+    //NSString *transfoText = [[deatilText stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSMutableAttributedString *text1 = [NSMutableAttributedString new];
+    [text1 appendAttributedString:[[NSAttributedString alloc] initWithString:deatilText attributes:nil]];
+    text1.font = [UIFont systemFontOfSize:16];
+    self.yyLable.attributedText = text1;
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"...全文"];
+    YYTextHighlight *hi = [YYTextHighlight new];
+    [hi setColor:[UIColor colorWithRed:0.578 green:0.790 blue:1.000 alpha:1.000]];
+    hi.tapAction = ^(UIView *containerView,NSAttributedString *text,NSRange range, CGRect rect) {
+
+        self.yyLable.truncationToken = nil;
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(reloadTableViewCellHeight)]) {
+            [self.delegate reloadTableViewCellHeight];
+        }
+        
+        
+
+    };
+       
+       
+    [text setColor:[UIColor colorWithRed:0.000 green:0.449 blue:1.000 alpha:1.000] range:[text.string rangeOfString:@"全文"]];
+       
+    [text setTextHighlight:hi range:[text.string rangeOfString:@"全文"]];
+    text.font =self.yyLable.font;
+       
+    YYLabel *seeMore = [YYLabel new];
+    seeMore.attributedText = text;
+    [seeMore sizeToFit];
+       
+
+    NSAttributedString *truncationToken = [NSAttributedString attachmentStringWithContent:seeMore contentMode:UIViewContentModeCenter attachmentSize:seeMore.frame.size alignToFont:text.font alignment:YYTextVerticalAlignmentCenter];
+       
+    self.yyLable.truncationToken = truncationToken;
+}
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
