@@ -104,6 +104,22 @@
                 button.layer.masksToBounds = YES;
                 
                 
+            }else if (HorizontalSlideButtonType4){
+                
+                button.titleLabel.font = [UIFont systemFontOfSize:16];
+                self.bottomLable.hidden = NO;
+                self.butttonType = HorizontalSlideButtonType1;
+                if (i == 0) {
+                    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+                    self.lastButton = button;
+                }
+                //button.frame = CGRectMake(0 + self.bounds.size.width/buttonArr.count * i, 0, self.bounds.size.width/buttonArr.count, self.bounds.size.height - 3);
+                [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                    makeLeft(self.mas_left,(DeviceWidth - 10)/buttonArr.count * i);
+                    make.centerY.mas_equalTo(self.mas_centerY);
+                    makeWidth((DeviceWidth - 10)/buttonArr.count);
+                }];
+                
             }
             
         }

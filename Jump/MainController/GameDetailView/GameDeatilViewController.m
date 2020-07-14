@@ -50,7 +50,7 @@
          makeTop(self.view.mas_top, 0);
          makeHeight(44);
      }];
-     [horizonTalButton numOfButtonWithArr:@[@"游戏信息",@"评测",@"讨论",] horizontalSlideButtonType:HorizontalSlideButtonType1];
+     [horizonTalButton numOfButtonWithArr:@[@"游戏信息",@"评测",@"讨论",] horizontalSlideButtonType:HorizontalSlideButtonType4];
     // Do any additional setup after loading the view.
     
     
@@ -110,7 +110,7 @@
     self.gameDetailTableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     [self.view addSubview:self.gameDetailTableView];
     [self.gameDetailTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        makeEdges(self.view, 0, 0, 0, 0);
+        makeEdges(self.view, 44, 0, 0, 0);
     }];
     self.gameDetailTableView.delegate = self;
     self.gameDetailTableView.dataSource = self;
@@ -216,7 +216,7 @@
                 label.textAlignment = NSTextAlignmentLeft;
                 label.text = tempcontent.text;
                 label.font = [UIFont systemFontOfSize:16];
-                CGSize labelSize = [label sizeThatFits:CGSizeMake(DeviceWidth - 10, MAXFLOAT)];
+                CGSize labelSize = [label sizeThatFits:CGSizeMake(DeviceWidth - 100, MAXFLOAT)];
                 height = ceil(labelSize.height) + 1;
             }else if ([tempcontent.type isEqualToString:@"image"]){
                 height  = height + 88;
@@ -250,7 +250,6 @@
     bgView.backgroundColor = [UIColor grayColor];
     UILabel *titleLable = [[UILabel alloc]init];
     [bgView addSubview:titleLable];
-    titleLable.text = @"社区讨论";
     [titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
         makeLeft(bgView.mas_left, 15);
         make.centerY.mas_equalTo(bgView.mas_centerY);
@@ -260,14 +259,37 @@
     
     UILabel *evaluatNum = [[UILabel alloc]init];
     [bgView addSubview:evaluatNum];
-    evaluatNum.text = @"890";
     evaluatNum.font = [UIFont systemFontOfSize:10];
     [evaluatNum mas_makeConstraints:^(MASConstraintMaker *make) {
         makeLeft(titleLable.mas_right, 5);
         makeTop(bgView.mas_top, 10);
     }];
     
+    UIImageView *rightImageView = [[UIImageView alloc]init];
+    [bgView addSubview:rightImageView];
+    [rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        makeWidth(20);
+        makeHeight(20);
+        makeRight(bgView.mas_right, -10);
+        make.centerY.mas_equalTo(bgView.mas_centerY);
+    }];
+    rightImageView.backgroundColor = [UIColor redColor];
+    rightImageView.image = [UIImage imageNamed:@"icon_right.png"];
+    
+    UILabel *detailLabel = [[UILabel alloc]init];
+    [bgView addSubview:detailLabel];
+    [detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        makeRight(rightImageView.mas_left, -5);
+        make.centerY.mas_equalTo(bgView.mas_centerY);
+    }];
+    detailLabel.text = @"查看全部评测";
+    detailLabel.textColor = RGB(191, 191, 191);
+    detailLabel.font = [UIFont systemFontOfSize:12];
+    
+    
     if (section == 1) {
+        evaluatNum.text = [NSString stringWithFormat:@"%lu",(unsigned long)self.GameCommentModel.data.comment.count];
+        titleLable.text = @"社区讨论";
         return bgView;
     }else{
         return NULL;
@@ -443,6 +465,10 @@
             self.discounrowOnOff = NO;
         }
         [self.gameDetailTableView reloadData];
+    }else if (indexPath.section == 1){
+        
+        
+        
     }
     
 }

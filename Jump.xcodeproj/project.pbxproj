@@ -73,6 +73,7 @@
 		04B747FF24B59FA600DB6C23 /* icon_repaly.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B747FA24B59FA500DB6C23 /* icon_repaly.png */; };
 		04B7480024B59FA600DB6C23 /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B747FB24B59FA600DB6C23 /* icon_share.png */; };
 		04B7480124B59FA600DB6C23 /* icon_happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B747FC24B59FA600DB6C23 /* icon_happy.png */; };
+		04B7480324BD862A00DB6C23 /* icon_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B7480224BD862900DB6C23 /* icon_right.png */; };
 		04C6FD3E24A629D70033F5F0 /* NoviceguideCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD3C24A629D70033F5F0 /* NoviceguideCollectionViewCell.m */; };
 		04C6FD3F24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */; };
 		04C6FD4924A6E9A70033F5F0 /* NoviceGuideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */; };
@@ -215,6 +216,7 @@
 		04B747FA24B59FA500DB6C23 /* icon_repaly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_repaly.png; sourceTree = "<group>"; };
 		04B747FB24B59FA600DB6C23 /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_share.png; sourceTree = "<group>"; };
 		04B747FC24B59FA600DB6C23 /* icon_happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_happy.png; sourceTree = "<group>"; };
+		04B7480224BD862900DB6C23 /* icon_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_right.png; sourceTree = "<group>"; };
 		04C6FD3B24A629D70033F5F0 /* NoviceguideCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoviceguideCollectionViewCell.h; sourceTree = "<group>"; };
 		04C6FD3C24A629D70033F5F0 /* NoviceguideCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoviceguideCollectionViewCell.m; sourceTree = "<group>"; };
 		04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoviceguideCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		04541A362495E97C0013B497 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				04B7480224BD862900DB6C23 /* icon_right.png */,
 				04B747FC24B59FA600DB6C23 /* icon_happy.png */,
 				04B747FA24B59FA500DB6C23 /* icon_repaly.png */,
 				04B747FB24B59FA600DB6C23 /* icon_share.png */,
@@ -656,6 +659,7 @@
 				04541A73249850180013B497 /* GradeTableViewCell.xib in Resources */,
 				041307E0249B96F2005D8E53 /* GameDiscountTableViewCell.xib in Resources */,
 				04B747FD24B59FA600DB6C23 /* icon_useful.png in Resources */,
+				04B7480324BD862A00DB6C23 /* icon_right.png in Resources */,
 				04541A53249742E50013B497 /* icon_back.png in Resources */,
 				04FDD02024A8F5B900AF0247 /* CollocateViewController.xib in Resources */,
 				04FDD02824A9A40200AF0247 /* ToolsListTableViewCell.xib in Resources */,

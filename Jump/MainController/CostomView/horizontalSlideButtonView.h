@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef enum {
     HorizontalSlideButtonType1,
     HorizontalSlideButtonType2,
-    HorizontalSlideButtonType3
+    HorizontalSlideButtonType3,
+    HorizontalSlideButtonType4
 }horizontalSlideButtonType;
 
 @protocol HorizontalSlideButtonDelegate <NSObject>
