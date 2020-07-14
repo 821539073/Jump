@@ -66,6 +66,13 @@
 		049BAA042498A3C200CDEB2A /* icon_videoplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 049BAA032498A3C200CDEB2A /* icon_videoplay.png */; };
 		049BAA082499005500CDEB2A /* GameNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 049BAA062499005500CDEB2A /* GameNameTableViewCell.m */; };
 		049BAA092499005500CDEB2A /* GameNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049BAA072499005500CDEB2A /* GameNameTableViewCell.xib */; };
+		04B747F624B439B900DB6C23 /* EvaluatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B747F424B439B900DB6C23 /* EvaluatTableViewCell.m */; };
+		04B747F724B439B900DB6C23 /* EvaluatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B747F524B439B900DB6C23 /* EvaluatTableViewCell.xib */; };
+		04B747FD24B59FA600DB6C23 /* icon_useful.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B747F824B59FA500DB6C23 /* icon_useful.png */; };
+		04B747FE24B59FA600DB6C23 /* icon_useless.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B747F924B59FA500DB6C23 /* icon_useless.png */; };
+		04B747FF24B59FA600DB6C23 /* icon_repaly.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B747FA24B59FA500DB6C23 /* icon_repaly.png */; };
+		04B7480024B59FA600DB6C23 /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B747FB24B59FA600DB6C23 /* icon_share.png */; };
+		04B7480124B59FA600DB6C23 /* icon_happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 04B747FC24B59FA600DB6C23 /* icon_happy.png */; };
 		04C6FD3E24A629D70033F5F0 /* NoviceguideCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD3C24A629D70033F5F0 /* NoviceguideCollectionViewCell.m */; };
 		04C6FD3F24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */; };
 		04C6FD4924A6E9A70033F5F0 /* NoviceGuideModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C6FD4824A6E9A70033F5F0 /* NoviceGuideModel.m */; };
@@ -200,6 +207,14 @@
 		049BAA052499005500CDEB2A /* GameNameTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameNameTableViewCell.h; sourceTree = "<group>"; };
 		049BAA062499005500CDEB2A /* GameNameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameNameTableViewCell.m; sourceTree = "<group>"; };
 		049BAA072499005500CDEB2A /* GameNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameNameTableViewCell.xib; sourceTree = "<group>"; };
+		04B747F324B439B900DB6C23 /* EvaluatTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EvaluatTableViewCell.h; sourceTree = "<group>"; };
+		04B747F424B439B900DB6C23 /* EvaluatTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvaluatTableViewCell.m; sourceTree = "<group>"; };
+		04B747F524B439B900DB6C23 /* EvaluatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EvaluatTableViewCell.xib; sourceTree = "<group>"; };
+		04B747F824B59FA500DB6C23 /* icon_useful.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_useful.png; sourceTree = "<group>"; };
+		04B747F924B59FA500DB6C23 /* icon_useless.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_useless.png; sourceTree = "<group>"; };
+		04B747FA24B59FA500DB6C23 /* icon_repaly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_repaly.png; sourceTree = "<group>"; };
+		04B747FB24B59FA600DB6C23 /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_share.png; sourceTree = "<group>"; };
+		04B747FC24B59FA600DB6C23 /* icon_happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_happy.png; sourceTree = "<group>"; };
 		04C6FD3B24A629D70033F5F0 /* NoviceguideCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoviceguideCollectionViewCell.h; sourceTree = "<group>"; };
 		04C6FD3C24A629D70033F5F0 /* NoviceguideCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoviceguideCollectionViewCell.m; sourceTree = "<group>"; };
 		04C6FD3D24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoviceguideCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -268,6 +283,11 @@
 		04541A362495E97C0013B497 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				04B747FC24B59FA600DB6C23 /* icon_happy.png */,
+				04B747FA24B59FA500DB6C23 /* icon_repaly.png */,
+				04B747FB24B59FA600DB6C23 /* icon_share.png */,
+				04B747F824B59FA500DB6C23 /* icon_useful.png */,
+				04B747F924B59FA500DB6C23 /* icon_useless.png */,
 				04E7337824B02FC50045DC45 /* icon_add.png */,
 				041307E1249B9882005D8E53 /* icon_opneTable.png */,
 				041307D7249B4FE2005D8E53 /* icon_navBack.png */,
@@ -322,6 +342,9 @@
 				04E7336F24B02D9E0045DC45 /* IsHaveGameTableViewCell.h */,
 				04E7337024B02D9E0045DC45 /* IsHaveGameTableViewCell.m */,
 				04E7337124B02D9E0045DC45 /* IsHaveGameTableViewCell.xib */,
+				04B747F324B439B900DB6C23 /* EvaluatTableViewCell.h */,
+				04B747F424B439B900DB6C23 /* EvaluatTableViewCell.m */,
+				04B747F524B439B900DB6C23 /* EvaluatTableViewCell.xib */,
 				041307E6249BBA50005D8E53 /* ChartView.h */,
 				041307E7249BBA50005D8E53 /* ChartView.m */,
 			);
@@ -622,13 +645,17 @@
 			files = (
 				04541A6E249849A20013B497 /* PriceHistoryTableViewCell.xib in Resources */,
 				048B43E0249399EA0021A2B6 /* LoginViewController.xib in Resources */,
+				04B747FF24B59FA600DB6C23 /* icon_repaly.png in Resources */,
 				04E7337924B02FC50045DC45 /* icon_add.png in Resources */,
 				04541A692497B16A0013B497 /* LowPriceTableViewCell.xib in Resources */,
+				04B7480124B59FA600DB6C23 /* icon_happy.png in Resources */,
 				04541A4D2496FCA90013B497 /* icon_alert.png in Resources */,
 				048B43A624932BCB0021A2B6 /* LaunchScreen.storyboard in Resources */,
 				04C6FD4E24A709D20033F5F0 /* NormalArticleTableViewController.xib in Resources */,
+				04B7480024B59FA600DB6C23 /* icon_share.png in Resources */,
 				04541A73249850180013B497 /* GradeTableViewCell.xib in Resources */,
 				041307E0249B96F2005D8E53 /* GameDiscountTableViewCell.xib in Resources */,
+				04B747FD24B59FA600DB6C23 /* icon_useful.png in Resources */,
 				04541A53249742E50013B497 /* icon_back.png in Resources */,
 				04FDD02024A8F5B900AF0247 /* CollocateViewController.xib in Resources */,
 				04FDD02824A9A40200AF0247 /* ToolsListTableViewCell.xib in Resources */,
@@ -648,8 +675,10 @@
 				04C6FD3F24A629D70033F5F0 /* NoviceguideCollectionViewCell.xib in Resources */,
 				04E7337324B02D9E0045DC45 /* IsHaveGameTableViewCell.xib in Resources */,
 				041307FB249E3269005D8E53 /* GamewalkthroughtCollectionViewCell.xib in Resources */,
+				04B747FE24B59FA600DB6C23 /* icon_useless.png in Resources */,
 				041307F3249DEB7D005D8E53 /* TodayRecommendTableViewCell.xib in Resources */,
 				049BAA042498A3C200CDEB2A /* icon_videoplay.png in Resources */,
+				04B747F724B439B900DB6C23 /* EvaluatTableViewCell.xib in Resources */,
 				04541A4E2496FCA90013B497 /* icon_unrecomm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,6 +754,7 @@
 				041307E5249B9B85005D8E53 /* GameDisCountModel.m in Sources */,
 				049BAA082499005500CDEB2A /* GameNameTableViewCell.m in Sources */,
 				04E7337224B02D9E0045DC45 /* IsHaveGameTableViewCell.m in Sources */,
+				04B747F624B439B900DB6C23 /* EvaluatTableViewCell.m in Sources */,
 				041307DF249B96F2005D8E53 /* GameDiscountTableViewCell.m in Sources */,
 				0444D131249A5DAB00BBC5B1 /* PriceView.m in Sources */,
 				04C6FD4D24A709D20033F5F0 /* NormalArticleTableViewController.m in Sources */,

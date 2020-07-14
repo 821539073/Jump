@@ -22,6 +22,8 @@
 #import <YYKit/YYKit.h>
 #import "GameIntroduceTableViewCell.h"
 #import "IsHaveGameTableViewCell.h"
+#import "EvaluatTableViewCell.h"
+
 @interface GameDeatilViewController ()<UITableViewDelegate,UITableViewDataSource,GameIntroduceTableViewCellDelegate>
 @property(nonatomic,strong) UITableView *gameDetailTableView;
 //@property(nonatomic,strong) UIScrollView *scrollView;
@@ -204,15 +206,48 @@
         
         return 150 ;
 
+    }else if(indexPath.section == 1){
+        Comment *tempcomment = self.GameCommentModel.data.comment[indexPath.row];
+        CGFloat height = 0.0;
+        for (Content *tempcontent in tempcomment.content) {
+            if ([tempcontent.type isEqualToString:@"text"]) {
+                UILabel *label = [[UILabel alloc]init];
+                label.numberOfLines = 0;
+                label.textAlignment = NSTextAlignmentLeft;
+                label.text = tempcontent.text;
+                label.font = [UIFont systemFontOfSize:16];
+                CGSize labelSize = [label sizeThatFits:CGSizeMake(DeviceWidth - 10, MAXFLOAT)];
+                height = ceil(labelSize.height) + 1;
+            }else if ([tempcontent.type isEqualToString:@"image"]){
+                height  = height + 88;
+            }
+        }
+        if(height < 44 ) {
+            return 44 + 98;
+        }else if(height > 202){
+            return 202 + 98;
+        }else{
+            return height + 98;
+        }
+        //return 300;
+    }else{
+        return 44;
     }
     
-    return 44;;
+     return 44;
 }
-
+-(CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGFLOAT_MIN;
+    }else{
+        return 44;
+    }
+    
+}
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 10;
+        return 7;
     }else if(section == 1){
         return self.GameCommentModel.data.comment.count;
     }
@@ -330,14 +365,26 @@
             [cell cellStyle1];
         }
         return cell;
+    }else if (indexPath.section == 1) {
+        static NSString *cellId = @"EvaluatTableViewCell";
+        EvaluatTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (!cell) {
+            NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"EvaluatTableViewCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            [cell commendAndMoreButtonCellStyle1:self.GameCommentModel.data.comment[indexPath.row]];
+        }
+        return cell;
+        
+        
     }else{
-
+        
         static NSString *cellId = @"cellID";
         UITableViewCell *cell1 = [tableView dequeueReusableCellWithIdentifier:cellId];
         if (!cell1) {
             cell1= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
             cell1.selectionStyle = UITableViewCellSelectionStyleNone;
-            tableView.separatorStyle =NO;
+            tableView.separatorStyle = NO;
             }
         return cell1;
     }
@@ -346,7 +393,7 @@
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
     
-    return 10;
+    return 2;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
