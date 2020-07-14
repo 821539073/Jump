@@ -245,6 +245,36 @@
     
 }
 
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *bgView = [[UIView alloc]init];
+    bgView.backgroundColor = [UIColor grayColor];
+    UILabel *titleLable = [[UILabel alloc]init];
+    [bgView addSubview:titleLable];
+    titleLable.text = @"社区讨论";
+    [titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
+        makeLeft(bgView.mas_left, 15);
+        make.centerY.mas_equalTo(bgView.mas_centerY);
+    }];
+    titleLable.font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
+    titleLable.backgroundColor = [UIColor redColor];
+    
+    UILabel *evaluatNum = [[UILabel alloc]init];
+    [bgView addSubview:evaluatNum];
+    evaluatNum.text = @"890";
+    evaluatNum.font = [UIFont systemFontOfSize:10];
+    [evaluatNum mas_makeConstraints:^(MASConstraintMaker *make) {
+        makeLeft(titleLable.mas_right, 5);
+        makeTop(bgView.mas_top, 10);
+    }];
+    
+    if (section == 1) {
+        return bgView;
+    }else{
+        return NULL;
+    }
+}
+
+
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
         return 7;
@@ -447,6 +477,17 @@
     CGFloat height = ceil(labelSize.height) + 1;
     self.deatilRowHeight = height;
 }
+
+//一起滑动
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat sectionHeaderHeight = 44;
+    if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >=0) {
+        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    }else if(scrollView.contentOffset.y >= sectionHeaderHeight){
+        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+    }
+}
+
 /*E
 #pragma mark - Navigation
 
