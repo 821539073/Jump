@@ -85,6 +85,8 @@
 		04E7337224B02D9E0045DC45 /* IsHaveGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E7337024B02D9E0045DC45 /* IsHaveGameTableViewCell.m */; };
 		04E7337324B02D9E0045DC45 /* IsHaveGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E7337124B02D9E0045DC45 /* IsHaveGameTableViewCell.xib */; };
 		04E7337924B02FC50045DC45 /* icon_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 04E7337824B02FC50045DC45 /* icon_add.png */; };
+		04FD381624C2C95900B7228C /* PostListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FD381424C2C95900B7228C /* PostListModel.m */; };
+		04FD381924C2D07E00B7228C /* squareEntryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FD381724C2D07E00B7228C /* squareEntryListModel.m */; };
 		04FDD01F24A8F5B900AF0247 /* CollocateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD01D24A8F5B900AF0247 /* CollocateViewController.m */; };
 		04FDD02024A8F5B900AF0247 /* CollocateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */; };
 		04FDD02324A9078700AF0247 /* ToolsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FDD02224A9078700AF0247 /* ToolsListViewController.m */; };
@@ -234,6 +236,10 @@
 		04E7337024B02D9E0045DC45 /* IsHaveGameTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsHaveGameTableViewCell.m; sourceTree = "<group>"; };
 		04E7337124B02D9E0045DC45 /* IsHaveGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IsHaveGameTableViewCell.xib; sourceTree = "<group>"; };
 		04E7337824B02FC50045DC45 /* icon_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_add.png; sourceTree = "<group>"; };
+		04FD381424C2C95900B7228C /* PostListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostListModel.m; sourceTree = "<group>"; };
+		04FD381524C2C95900B7228C /* PostListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostListModel.h; sourceTree = "<group>"; };
+		04FD381724C2D07E00B7228C /* squareEntryListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = squareEntryListModel.m; sourceTree = "<group>"; };
+		04FD381824C2D07E00B7228C /* squareEntryListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = squareEntryListModel.h; sourceTree = "<group>"; };
 		04FDD01C24A8F5B900AF0247 /* CollocateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollocateViewController.h; sourceTree = "<group>"; };
 		04FDD01D24A8F5B900AF0247 /* CollocateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollocateViewController.m; sourceTree = "<group>"; };
 		04FDD01E24A8F5B900AF0247 /* CollocateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollocateViewController.xib; sourceTree = "<group>"; };
@@ -357,6 +363,10 @@
 		04541A79249861C90013B497 /* GameDetailModel */ = {
 			isa = PBXGroup;
 			children = (
+				04FD381824C2D07E00B7228C /* squareEntryListModel.h */,
+				04FD381724C2D07E00B7228C /* squareEntryListModel.m */,
+				04FD381524C2C95900B7228C /* PostListModel.h */,
+				04FD381424C2C95900B7228C /* PostListModel.m */,
 				041307DA249B9349005D8E53 /* GameComment.h */,
 				041307D9249B9349005D8E53 /* GameComment.m */,
 				04541A86249872390013B497 /* GameIntroduceModle.h */,
@@ -759,10 +769,12 @@
 				049BAA082499005500CDEB2A /* GameNameTableViewCell.m in Sources */,
 				04E7337224B02D9E0045DC45 /* IsHaveGameTableViewCell.m in Sources */,
 				04B747F624B439B900DB6C23 /* EvaluatTableViewCell.m in Sources */,
+				04FD381924C2D07E00B7228C /* squareEntryListModel.m in Sources */,
 				041307DF249B96F2005D8E53 /* GameDiscountTableViewCell.m in Sources */,
 				0444D131249A5DAB00BBC5B1 /* PriceView.m in Sources */,
 				04C6FD4D24A709D20033F5F0 /* NormalArticleTableViewController.m in Sources */,
 				048B439B24932BCA0021A2B6 /* ViewController.m in Sources */,
+				04FD381624C2C95900B7228C /* PostListModel.m in Sources */,
 				04C6FD4924A6E9A70033F5F0 /* NoviceGuideModel.m in Sources */,
 				048B43EB2493C8040021A2B6 /* CardTableViewCell.m in Sources */,
 				048B43CF24932C3D0021A2B6 /* RecommdViewController.m in Sources */,

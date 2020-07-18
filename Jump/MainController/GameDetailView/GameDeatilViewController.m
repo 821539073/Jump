@@ -23,13 +23,18 @@
 #import "GameIntroduceTableViewCell.h"
 #import "IsHaveGameTableViewCell.h"
 #import "EvaluatTableViewCell.h"
+#import "PostListModel.h"
+#import "squareEntryListModel.h"
 
 @interface GameDeatilViewController ()<UITableViewDelegate,UITableViewDataSource,GameIntroduceTableViewCellDelegate>
 @property(nonatomic,strong) UITableView *gameDetailTableView;
-//@property(nonatomic,strong) UIScrollView *scrollView;
+@property(nonatomic,strong) horizontalSlideButtonView *horizonTalButton;
+
 @property(nonatomic,strong) GameIntroduceModle *dataModel;
 @property(nonatomic,strong) GameComment *GameCommentModel;
 @property(nonatomic,strong) GameDisCountModel*gameDiscountModel;
+@property(nonatomic,strong) PostListModel *postList;
+@property(nonatomic,strong) squareEntryListModel *squareEntryList;
 @property(nonatomic,assign) BOOL discounrowOnOff;
 @property(nonatomic,assign) BOOL LabelOpen;
 
@@ -42,15 +47,17 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.LabelOpen = YES;
-    horizontalSlideButtonView *horizonTalButton = [[horizontalSlideButtonView alloc]init];
-     [self.view addSubview:horizonTalButton];
-     [horizonTalButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.horizonTalButton = [[horizontalSlideButtonView alloc]init];
+     [self.view addSubview:self.horizonTalButton];
+     [self.horizonTalButton mas_makeConstraints:^(MASConstraintMaker *make) {
          makeLeft(self.view.mas_left, 0);
          makeRight(self.view.mas_right, 0);
          makeTop(self.view.mas_top, 0);
          makeHeight(44);
      }];
-     [horizonTalButton numOfButtonWithArr:@[@"游戏信息",@"评测",@"讨论",] horizontalSlideButtonType:HorizontalSlideButtonType4];
+    
+    [self.horizonTalButton numOfButtonWithArr:@[@"游戏",@"评测",@"圈子",@"讨论"] horizontalSlideButtonType:HorizontalSlideButtonType4];
+    
     // Do any additional setup after loading the view.
     
     
@@ -91,12 +98,59 @@
     
     [NetWorkObject ListGameComment:self.appid Success:^(id  _Nonnull success) {
         self.GameCommentModel = [GameComment modelWithJSON:success];
+        [self FetchgetDiscount];
         [self.gameDetailTableView reloadData];
     } failure:^(id  _Nonnull failure) {
         NSLog(@"%@",failure);
     }];
     
 }
+
+-(void)FetchgetDiscount{
+    
+    [NetWorkObject getPostListEntityIdStr:self.appid Success:^(id  _Nonnull success) {
+        self.postList = [PostListModel modelWithJSON:success];
+        [self getsquareEntryList];
+        [self.gameDetailTableView reloadData];
+    } failure:^(id  _Nonnull failure) {
+        
+    }];
+    
+}
+
+-(void)getsquareEntryList{
+    
+    [NetWorkObject getsquareEntryListGameIdStr:self.appid Success:^(id  _Nonnull success) {
+        self.squareEntryList = [squareEntryListModel modelWithJSON:success];
+        [self topSliderView];
+        [self.gameDetailTableView reloadData];
+    } failure:^(id  _Nonnull failure) {
+        
+    }];
+}
+
+
+-(void)topSliderView{
+    NSString *count;
+    NSString *hits;
+    NSString *squareEntryList;
+    if (self.GameCommentModel.data.count > 1000) {
+        count = [NSString stringWithFormat:@"评测/%.1fk",[[NSNumber numberWithLong:self.GameCommentModel.data.count] floatValue]/1000];
+    }else{
+        count = [NSString stringWithFormat:@"评测/%ld",(long)self.GameCommentModel.data.count];
+    }
+    if (self.postList.data.count > 1000) {
+        hits = [NSString stringWithFormat:@"讨论/%.1fk",[[NSNumber numberWithLong:self.postList.data.count] floatValue]/1000];
+    }else{
+        hits = [NSString stringWithFormat:@"讨论/%ld",(long)self.postList.data.count];
+    }
+    
+    squareEntryList = [NSString stringWithFormat:@"圈子/%ld",self.squareEntryList.data.totalCount];
+     
+    [self.horizonTalButton numOfButtonWithArr:@[@"游戏",count,squareEntryList,hits] horizontalSlideButtonType:HorizontalSlideButtonType4];
+    
+}
+
 
 -(void)showLeft:(UIButton *)button{
     

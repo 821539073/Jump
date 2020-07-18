@@ -148,8 +148,20 @@
     }];
 }
 +(void)getPostListEntityIdStr:(NSString *)entityIdStr Success:(void(^)(id success))success failure:(void(^)(id failure))failure{
+    NSString *url = [@"https://switch.jumpvg.com/switch/post/list?moduleId=1&offset=0&sortType=postDefault&version=2&limit=10&entityIdStr=" stringByAppendingString:entityIdStr];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
+    [manager setSecurityPolicy:[self customSecurityPolicy]];
+    [manager GET:url parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+}
+
++(void)getsquareEntryListGameIdStr:(NSString *)gameIdStr Success:(void(^)(id success))success failure:(void(^)(id failure))failure{
     
-    NSString *url = [@"https://switch.jumpvg.com/switch/post/list?moduleId=1&entityIdStr=%@&offset=0&sortType=postDefault&version=2&limit=10" stringByAppendingString:entityIdStr];
+    NSString *url = [@"https://community.jumpvg.com/community/square/squareEntryList?offset=0&len=10&topicId=-1&orderBy=new&moduleId=1&gameIdStr=" stringByAppendingString:gameIdStr];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
     [manager setSecurityPolicy:[self customSecurityPolicy]];
@@ -159,8 +171,8 @@
         failure(error);
     }];
     
-    
 }
+
 
 
 

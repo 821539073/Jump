@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)getNewPlayerListSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure;
 +(void)getNormalArticleWithId:(NSString *)articleId Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
 +(void)getPostListEntityIdStr:(NSString *)entityIdStr Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
-
++(void)getsquareEntryListGameIdStr:(NSString *)gameIdStr Success:(void(^)(id success))success failure:(void(^)(id failure))failure;
 
 
 

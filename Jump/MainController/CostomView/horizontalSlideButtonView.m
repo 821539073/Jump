@@ -29,6 +29,9 @@
 
 
 -(void)numOfButtonWithArr:(NSArray *)buttonArr horizontalSlideButtonType:(horizontalSlideButtonType) type{
+    
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
     self.arr = buttonArr;
     self.bottomLable = [[UILabel alloc]init];
     [self addSubview:self.bottomLable];
@@ -46,10 +49,10 @@
             [self addSubview:button];
             button.tag = 1000 + i;
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            [button setTitle:buttonArr[i] forState:UIControlStateNormal];
             [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
             //button.backgroundColor = [UIColor yellowColor];
             if (type == HorizontalSlideButtonType1) {
+                [button setTitle:buttonArr[i] forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont systemFontOfSize:16];
                 self.bottomLable.hidden = NO;
                 self.butttonType = HorizontalSlideButtonType1;
@@ -66,6 +69,7 @@
                 
 
             }else if(type == HorizontalSlideButtonType2){
+                [button setTitle:buttonArr[i] forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont systemFontOfSize:14];
                 if (i == 0) {
                     button.titleLabel.font = [UIFont systemFontOfSize:16];
@@ -81,6 +85,7 @@
                     makeWidth(80);
                 }];
             }else if(type == HorizontalSlideButtonType3){
+                [button setTitle:buttonArr[i] forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont systemFontOfSize:10];
                 self.bottomLable.hidden = YES;
                 self.butttonType = HorizontalSlideButtonType3;
@@ -105,7 +110,25 @@
                 
                 
             }else if (HorizontalSlideButtonType4){
-                
+                NSArray *tempArr = [buttonArr[i] componentsSeparatedByString:@"/"];
+                if (tempArr.count == 2) {
+                    NSString *tempStr1 = tempArr[0];
+                    NSString *tempStr2 = tempArr[1];
+                    
+                    NSMutableAttributedString *tempPriceStr = [[NSMutableAttributedString alloc]initWithString:[buttonArr[i] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
+                                //NSLog(@"%@",tempPriceStr);
+                                //1段
+                    [tempPriceStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:10] range:NSMakeRange(tempStr1.length, tempStr2.length)];
+                    [tempPriceStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(tempStr1.length, tempStr2.length)];
+                    [tempPriceStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(tempStr1.length, tempStr2.length)];
+                    [tempPriceStr addAttribute:NSBaselineOffsetAttributeName value:[NSNumber numberWithInt:5] range:NSMakeRange(tempStr1.length, tempStr2.length)];
+                    
+                    [button setAttributedTitle:tempPriceStr forState:UIControlStateNormal];
+                    
+                }else{
+                    [button setTitle:buttonArr[i] forState:UIControlStateNormal];
+                }
+                //[button setTitle:buttonArr[i] forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont systemFontOfSize:16];
                 self.bottomLable.hidden = NO;
                 self.butttonType = HorizontalSlideButtonType1;
@@ -119,6 +142,8 @@
                     make.centerY.mas_equalTo(self.mas_centerY);
                     makeWidth((DeviceWidth - 10)/buttonArr.count);
                 }];
+                
+                
                 
             }
             
