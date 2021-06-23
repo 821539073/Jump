@@ -131,7 +131,7 @@
                 //[button setTitle:buttonArr[i] forState:UIControlStateNormal];
                 button.titleLabel.font = [UIFont systemFontOfSize:16];
                 self.bottomLable.hidden = NO;
-                self.butttonType = HorizontalSlideButtonType1;
+                self.butttonType = HorizontalSlideButtonType4;
                 if (i == 0) {
                     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
                     self.lastButton = button;
@@ -170,6 +170,18 @@
             sender.titleLabel.font = [UIFont systemFontOfSize:18];
             self.lastButton.titleLabel.font = [UIFont systemFontOfSize:14];
         }else if(self.butttonType == HorizontalSlideButtonType3){
+            sender.layer.borderColor = [UIColor redColor].CGColor;
+            [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            self.lastButton.layer.borderColor = [UIColor blackColor].CGColor;
+            [self.lastButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }else if(self.butttonType == HorizontalSlideButtonType4){
+            
+            self.bottomLable.frame = CGRectMake(80 + self.bounds.size.width/self.arr.count * (sender.tag - 1000), self.bounds.size.height - 3, self.bounds.size.width/self.arr.count - 40, 3);
+            self.bottomLable.center = CGPointMake(sender.center.x, self.bounds.size.height - 3);
+            NSLog(@"%@",self.bottomLable);
+            [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            //将上次点击过的按钮设为黑色
+            [self.lastButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             sender.layer.borderColor = [UIColor redColor].CGColor;
             [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
             self.lastButton.layer.borderColor = [UIColor blackColor].CGColor;

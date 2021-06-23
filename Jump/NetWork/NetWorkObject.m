@@ -180,7 +180,7 @@
 +(void)addToolWithDic:(NSDictionary *)toolDic Success:(void(^)(id success))success failure:(void(^)(id failure))failure{
     
     
-    NSString *url = [@"http://106.14.127.196:8000/addTool?" stringByAppendingFormat:@"cellName=%@&cellPic=%@",[toolDic objectForKey:@"cellName"],[toolDic objectForKey:@"cellPic"]];
+    NSString *url = [@"http://106.14.127.196:80/addTool?" stringByAppendingFormat:@"cellName=%@&cellPic=%@",[toolDic objectForKey:@"cellName"],[toolDic objectForKey:@"cellPic"]];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
    // manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
     //[manager setSecurityPolicy:[self customSecurityPolicy]];
@@ -195,7 +195,7 @@
 
 +(void)searchAllToolSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure{
     
-     NSString *url = @"http://106.14.127.196:8000/searchAllTool";
+     NSString *url = @"http://106.14.127.196:80/searchAllTool";
      AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     // manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
      //[manager setSecurityPolicy:[self customSecurityPolicy]];
@@ -208,7 +208,7 @@
 }
 +(void)removeAllToolSuccess:(void(^)(id success))success failure:(void(^)(id failure))failure{
     
-     NSString *url = @"http://106.14.127.196:8000/removeAllTool";
+     NSString *url = @"http://106.14.127.196:80/removeAllTool";
      AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     // manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
      //[manager setSecurityPolicy:[self customSecurityPolicy]];
@@ -222,7 +222,7 @@
 
 +(void)removeToolWithName:(NSString *)cellName Success:(void(^)(id success))success failure:(void(^)(id failure))failure{
     
-     NSString *url = [@"http://106.14.127.196:8000/removeToolWithName?cellName=" stringByAppendingString:cellName];
+     NSString *url = [@"http://106.14.127.196:80/removeToolWithName?cellName=" stringByAppendingString:cellName];
      AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     // manager.requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
      //[manager setSecurityPolicy:[self customSecurityPolicy]];
